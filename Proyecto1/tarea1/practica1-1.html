@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea1.1</title>
+    <style>
+        #botonBody{
+            background-color: blue;
+            color: white;
+        }
+        #botonBody:hover{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practica 1.1</h1>
+    <p>Esto es un parrafo</p>
+    <button id="botonBody">Pulse Aquí</button>
+</body>
+<script>
+    const botonBody = document.getElementById('botonBody');
+    botonBody.onclick = function () {
+        alert("Pulsate un botón")
+    };
+</script>
+</html>
