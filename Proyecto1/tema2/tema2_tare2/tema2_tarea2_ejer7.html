@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+</html>
+
+<script>
+
+    function PulgadasAMetros(pulgadas) {
+        let PULGADAS_A_CM = 2.54;
+        return (pulgadas * PULGADAS_A_CM) / 100;
+    }
+
+    function LibrasAKilos(libras) {
+        let LIBRAS_A_KG = 2.2046;
+        return libras / LIBRAS_A_KG;
+    }
+
+    function calcularIMC(pesoLibras, alturaPulgadas) {
+        let pesoKg = LibrasAKilos(pesoLibras);
+        let alturaMetros = PulgadasAMetros(alturaPulgadas);
+
+        return pesoKg / (alturaMetros ** 2);
+    }
+
+    let peso = parseInt(prompt("Introduzca peso(Libras)"));
+    let altura = parseInt(prompt("Introduzca altura(Pulgadas)"));
+
+    let imc = calcularIMC(peso, altura)
+    console.log(`Su indice de masa es ${imc}`)
+</script>

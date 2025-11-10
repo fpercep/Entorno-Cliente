@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+</html>
+<script>
+    let input = prompt("Introduce una temperatura en grados Celsisus");
+    if (!isNaN(parseFloat(input))){
+        let fahrenheit = (parseFloat(input) * 1.8) + 32;
+        let kelvin = parseFloat(input) + 273.15;
+        console.log(input + " grados Celsisus son " + fahrenheit + " grados Fahrenheit y " + kelvin + " Kelvin");
+    }else {
+        console.log(input + " no es un numero");
+    }
+</script>
