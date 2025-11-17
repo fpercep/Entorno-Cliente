@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let puntuaciones = [];
+    let media = 0;
+    for (let i = 0; i < 5; i++) {
+        let puntuacion = 0;
+        let nombre;
+        do {
+            nombre = prompt("Introduce un nombre:");
+            puntuacion = parseInt(prompt("Introduce una nota:"));
+        } while (isNaN(puntuacion));
+        puntuaciones.push({
+            "puntuacion": puntuacion,
+            "nombre": nombre
+        });
+        media += puntuacion;
+    }
+    media /= notas.length;
+</script>
+</body>
+</html>

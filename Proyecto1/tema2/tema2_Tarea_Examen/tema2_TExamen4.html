@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let objeto = {
+        "usuario": "John",
+        "clave": "Clave",
+        "intentos": 3
+    };
+
+    let correcto = false;
+    do {
+        let intento_usuario = prompt("Introduzca su usuario");
+        let intento_clave = prompt("Introduzca su clave");
+        if (intento_usuario === objeto.usuario && intento_clave === objeto.clave) {
+            correcto = true;
+            alert("Login Exitoso")
+        } else {
+            objeto.intentos--
+            alert(`Credenciales Incorrectas. Le quedan ${objeto.intentos} intentos`)
+        }
+    } while(objeto.intentos > 0 && !correcto);
+</script>
+</body>
+</html>

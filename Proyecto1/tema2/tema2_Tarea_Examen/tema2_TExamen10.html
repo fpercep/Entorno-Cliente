@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let puntos = 0;
+    const cuestionario = [
+        {
+            pregunta: "¿Pregunta?",
+            opciones: "1 2 3 4",
+            respuestaCorrecta: "3"
+        },
+        {
+            pregunta: "¿Pregunta?",
+            opciones: "1 2 3 4",
+            respuestaCorrecta: "2"
+        },
+        {
+            pregunta: "¿Pregunta?",
+            opciones: "1 2 3 4",
+            respuestaCorrecta: "1"
+        }
+    ];
+
+    for (let i = 0; i < cuestionario.length; i++) {
+        let respuesta = prompt(cuestionario[i].pregunta + "\n" + cuestionario[i].opciones);
+        if (respuesta === cuestionario[i].respuestaCorrecta) {
+            puntos ++;
+        }
+    }
+
+    let porcetajeAcierto = (puntos * 100)/cuestionario.length;
+
+    console.log("Puntos:" + puntos);
+    console.log("Porcentaje Aciertos:" + porcetajeAcierto);
+</script>
+</body>
+</html>

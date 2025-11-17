@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let coches = [
+            { marca: "Ford", modelo: "Focus", color: "negro" },
+            { marca: "Renault", modelo: "Clio", color: "blanco" },
+            { marca: "Seat", modelo: "León", color: "negro" },
+            { marca: "Volkswagen", modelo: "Golf", color: "rojo" }
+        ];
+
+        console.log("Coches de color negro:");
+        let k = 0;
+        for (let i = 0; i < coches.length; i++) {
+            if (coches[i].color === "negro") {
+                console.log("- " + coches[i].marca + " " + coches[i].modelo);
+            }
+        }
+    </script>
+</body>
+</html>

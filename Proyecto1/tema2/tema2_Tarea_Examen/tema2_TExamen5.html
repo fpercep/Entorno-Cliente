@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let productos = [
+        {
+            "nombre": "silla",
+            "precio": 12,
+            "stock": 100
+        },
+        {
+            "nombre": "mesa",
+            "precio": 1,
+            "stock": 1000
+        }
+    ]
+    let salir = false;
+    do {
+        let input = prompt(`=== GESTIÓN DE TIENDA ===
+        1. Ver todos los productos
+        2. Buscar producto por nombre
+        3. Mostrar total del valor del stock
+        4. Añadir nuevo producto
+        5. Salir
+
+        Seleccione una opción:`)
+
+        switch (input) {
+            case "1":
+                console.table(productos);
+                break;
+            case "2":
+                let nombreBuscar = prompt("Introduce un producto");
+                let productoEncontrado = productos.find(producto => producto.nombre === nombreBuscar.toLowerCase());
+                console.table(productoEncontrado);
+                break;
+            case "3":
+                break;
+            case "4":
+                let nProductoNombre = prompt("Introduce un nombre para el nuevo producto");
+                let nProductoPrecio = prompt("Introduce un precio al producto");
+                let nProductoStock = prompt("Introduce un stock al producto");
+                let nProducto = {
+                    "nombre": nProductoNombre,
+                    "precio": nProductoPrecio,
+                    "stock": nProductoStock
+                };
+                productos.push(producto);
+                break;
+            case "5":
+                salir = true;
+                break;
+        }
+    } while (!salir);
+</script>
+</body>
+</html>

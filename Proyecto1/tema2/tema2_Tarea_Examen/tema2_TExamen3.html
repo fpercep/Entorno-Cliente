@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let cadena = (prompt("Introduce una cadena:")).trim();
+    let palabras = cadena.split(' ');
+    let cadenaMa = cadena.toUpperCase();
+    let cadenaMi = cadena.toLowerCase();
+    let contieneJavascript = cadenaMi.includes("javascript");
+    let contadorA = cadena.toLowerCase().split("a").length -1;
+
+
+    const output = {
+        "Frase": cadena,
+        "Frase en mayusculas": cadenaMa,
+        "Frase en minusculas": cadenaMi,
+        "Numero de palabras": palabras.length,
+        "Contiene javascript": contieneJavascript,
+        "Numero de a": contadorA,
+    }
+    console.table(output);
+</script>
+</body>
+</html>

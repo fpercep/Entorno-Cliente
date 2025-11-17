@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nombre = (prompt('Introduzca un nombre:')).toLowerCase().trim();
+    let helado;
+    let tamanio;
+    let precioFinal = 0;
+    let correcto = true;
+    do {
+        correcto = true
+        helado = (prompt('Introduzca un tipo de helado:')).toLowerCase().trim();
+        switch (helado) {
+            case "vainilla":
+                precioFinal = 10;
+                break;
+            case "chocolate":
+                precioFinal = 9;
+                break;
+            case "fresa":
+                precioFinal = 8;
+                break;
+            case "menta":
+                precioFinal = 2;
+                break;
+            default:
+                correcto = false;
+                alert("Nombre de helado incorrecto");
+                break;
+        }
+    } while (!correcto);
+    do {
+        correcto = true
+        tamanio = (prompt('Introduzca un tamaño de helado:')).toLowerCase().trim();
+        switch (tamanio) {
+            case "pequeño":
+                precioFinal *= 1;
+                break;
+            case "mediano":
+                precioFinal *= 1.5;
+                break;
+            case "grande":
+                precioFinal *= 2;
+                break;
+            default:
+                correcto = false;
+                alert("tamaño de helado incorrecto");
+                break;
+        }
+    } while (!correcto);
+    const pedido = {
+        "Nombre": nombre,
+        "Sabor": helado,
+        "Tamanio": tamanio,
+        "Precio Final": precioFinal
+    };
+    console.table(pedido);
+</script>
+</body>
+</html>

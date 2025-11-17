@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="parrafoColor">Este párrafo cambiará de color al pulsar los botones</p>
+<button onclick="document.getElementById('parrafoColor').style.color='red'">Rojo</button>
+<button onclick="document.getElementById('parrafoColor').style.color='blue'">Azul</button>
+<button onclick="document.getElementById('parrafoColor').style.color='green'">Verde</button>
+<button onclick="document.getElementById('parrafoColor').style.color='purple'">Morado</button>
+<button onclick="document.getElementById('parrafoColor').style.color='orange'">Naranja</button>
+
+<div
+        onmouseover="this.style.backgroundColor='yellow'"
+        onmouseout="this.style.backgroundColor='white'"
+        style="padding: 10px; border: 1px solid black; margin: 10px 0;"
+>
+    Pasa el ratón por encima para cambiar el color
+</div>
+
+<input
+        type="text"
+        id="campoTexto"
+        placeholder="Escribe algo y luego haz clic fuera"
+        onblur="alert('Has abandonado el campo de texto')"
+>
+
+<div>
+    <h3>Fecha actual:</h3>
+    <p id="fechaActual"></p>
+</div>
+
+<script>
+    function mostrarFechaActual() {
+        let ahora = new Date();
+        let opciones = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        let fechaFormateada = ahora.toLocaleDateString('es-ES', opciones);
+        document.getElementById('fechaActual').textContent = fechaFormateada;
+    }
+
+    mostrarFechaActual();
+</script>
+</body>
+</html>

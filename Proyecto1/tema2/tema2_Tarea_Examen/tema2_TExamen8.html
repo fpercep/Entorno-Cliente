@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salir = false;
+    do {
+        let recomendacion= "Sin recomendacion";
+        let input = parseInt(prompt("Introduzca una edad"));
+        if (input === 0 ) {
+            salir = true;
+            continue;
+        } else if (input < 13) {
+            recomendacion = "Solo dibujos";
+        } else if (input < 18) {
+            recomendacion = "películas juveniles";
+        }else if (input < 65) {
+            recomendacion = "todo tipo contenido";
+        }
+        else if (input >= 65) {
+            recomendacion = "películas recomendados";
+        } else{
+            alert("Edad Incorrecta");
+        }
+        alert(recomendacion);
+    } while (!salir)
+</script>
+</body>
+</html>

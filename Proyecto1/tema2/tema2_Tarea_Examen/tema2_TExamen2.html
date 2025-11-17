@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let notas = [];
+    let media = 0;
+    for (let i = 0; i < 5; i++) {
+        let nota = 0;
+        do {
+            nota = parseInt(prompt("Introduce una nota:"));
+        } while (isNaN(nota) || nota < 0 || nota > 10);
+        notas.push(nota);
+        media += nota;
+    }
+    media /= notas.length;
+
+    const output = {
+        "Media": media,
+        "Menor Nota": Math.min(...notas),
+        "Mayor Nota": Math.max(...notas),
+    }
+    console.table(output);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+</html>
+<script>
+    let input = prompt("Introduce un numero: ");
+    let output;
+    if (!isNaN(parseFloat(input))){
+        if(input < 5){
+            output = "Suspenso";
+        } else if (input < 7){
+            output = "Aprobado";
+        } else if (input < 9){
+            output = "Notable";
+        } else{
+            output = "Sobresaliente";
+        }
+        console.log(output);
+    }else {
+        console.log(input + " no es un numero");
+    }
+</script>

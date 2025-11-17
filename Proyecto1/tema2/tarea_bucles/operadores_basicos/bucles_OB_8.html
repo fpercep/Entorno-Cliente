@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+</html>
+<script>
+    //El enunciado estaba mal redactado, por ello he dado por hecho que me da el DNI y la letra separada
+    let nDNI = prompt("Introduce el DNI sin la letra");
+    let lDNI = prompt("Introduce letra del DNI");
+    if (!isNaN(parseFloat(nDNI))){
+        const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+        let posLetra = nDNI % 23;
+        lDNI = lDNI.toUpperCase();
+        if (letras[posLetra] === lDNI){
+            console.log("La letra del DNI es correta");
+        } else {
+            console.log("La letra del DNI no es correta");
+        }
+
+    }else {
+        console.log(input + " no es un valor valido");
+    }
+</script>

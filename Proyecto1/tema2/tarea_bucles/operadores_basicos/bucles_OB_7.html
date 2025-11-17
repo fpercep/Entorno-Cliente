@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+</html>
+<script>
+    let input = prompt("Introduce un numero");
+    if (!isNaN(parseFloat(input) || input <= 0)){
+        let area = Math.PI * (input**2);
+        let longitud = 2 * Math.PI * input
+        console.log("Longitud: " +  longitud);
+        console.log("Area: " +  area);
+    }else {
+        console.log(input + " no es un valor valido");
+    }
+
+</script>

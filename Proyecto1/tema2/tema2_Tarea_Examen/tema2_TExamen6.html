@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Introduce su fecha de cumpleaños(YYYY-MM-DD)");
+    let nacimiento = new Date(input);
+    let ahora = new Date();
+
+    let edad = ahora.getFullYear() - nacimiento.getFullYear();
+    let mesNacimiento = nacimiento.getMonth() ;
+    let diaNacimiento = nacimiento.getDate() ;
+    let mesAhora = ahora.getMonth();
+    let diaAhora= ahora.getDate();
+
+    if (mesNacimiento > mesAhora || (mesNacimiento === mesAhora && diaNacimiento > diaAhora)){
+        edad --;
+    }
+
+    let proximoCumplenio = new Date(nacimiento);
+    if (mesNacimiento < mesAhora || (mesNacimiento === mesAhora && diaNacimiento < diaAhora)){
+        proximoCumplenio.setFullYear(ahora.getFullYear() + 1);
+    }else {
+        proximoCumplenio.setFullYear(ahora.getFullYear())
+    }
+    let diferencia = (proximoCumplenio - ahora) / (1000 * 60 * 60 * 24);
+    console.log(`Usted tiene ${edad} años`);
+    console.log(`Quedan ${diferencia} dias para su cumpleños`);
+</script>
+</body>
+</html>

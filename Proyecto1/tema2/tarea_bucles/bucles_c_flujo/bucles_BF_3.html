@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            let nombresArray = ["Ana", "Pedro", "María", "Pablo", "Luis", "Paula"];
+
+            let n = 0;
+            while (n < nombresArray.length) {
+                if (nombresArray[n].toLowerCase().startsWith("p")) {
+                    nombresArray.splice(n, 1);
+                } else {
+                    n++;
+                }
+            }
+        </script>
+</body>
+</html>

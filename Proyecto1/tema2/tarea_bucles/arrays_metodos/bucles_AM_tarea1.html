@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+</html>
+<script>
+
+    let listaCompra = [];
+    listaCompra.push("Manzanas", "Pan", "Leche", "Huevos", "Arroz");
+    listaCompra[1] = "Pan integral";
+    listaCompra.pop();
+    listaCompra.sort();
+    let posicion = listaCompra.indexOf("Leche");
+    console.log(posicion);
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        for (let propiedad in automovil) {
+            console.log(propiedad + ": " + automovil[propiedad]);
+        }
+
+        console.log("Propiedades del automóvil (Object.entries()):");
+        let entries = Object.entries(automovil);
+        let i = 0;
+        while (i < entries.length) {
+            console.log(entries[i][0] + ": " + entries[i][1]);
+            i++;
+        }
+    </script>
+</body>
+</html>

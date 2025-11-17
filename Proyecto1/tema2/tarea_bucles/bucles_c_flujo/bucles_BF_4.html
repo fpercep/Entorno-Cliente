@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            let entradaUsuario;
+            do {
+                entradaUsuario = prompt("Introduce un número (0 para terminar):");
+
+                let numero = parseInt(entradaUsuario);
+
+                if (isNaN(numero)) {
+                    console.log("Por favor, introduce un número válido");
+                } else if (numero !== 0) {
+                    console.log("Número introducido: " + numero);
+                }
+
+            } while (entradaUsuario !== "0" && entradaUsuario !== null);
+        </script>
+</body>
+</html>

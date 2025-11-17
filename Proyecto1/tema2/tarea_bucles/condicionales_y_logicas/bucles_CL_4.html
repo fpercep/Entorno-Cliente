@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+</html>
+<script>
+    let input = (prompt("Introduce un numero: ").toLowerCase());
+    let recomendacion;
+    if (input === "carne") {
+        recomendacion = "vino";
+    } else if (input === "pescado") {
+        recomendacion = "vino blanco";
+    } else {
+        recomendacion = "agua";
+    }
+    console.log("Con su comida se le recomienda " + recomendacion);
+</script>
