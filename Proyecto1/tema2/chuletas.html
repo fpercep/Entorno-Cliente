@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ventas = [120, 340, 560, 80, 230, 600, 400];
+    let maximo = Math.max(...ventas);
+    let minimo = Math.min(...ventas);
+    const suma = ventas.reduce((a, b) => a + b, 0);
+    const ventaM300 = (ventas.filter(venta => venta > 300)).length;
+    for (const venta of ventas) {
+        console.log(venta);
+    }
+    let objeto = {a: 1, b: 2, c: 3};
+    for (const elemento in objeto) {
+        console.log(elemento);
+        console.log(objeto[elemento]);
+    }
+</script>
+</body>
+</html>
