@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="empezar()">Empezar</button>
+<button onclick="terminar()">Terminar</button>
+
+<script>
+    let contador = 0;
+    function empezar(){
+        contador = setTimeout(alerta, 3000);
+    }
+    function alerta(){
+        alert("Han pasado 3 segundos");
+    }
+    function terminar(){
+        clearTimeout(contador);
+        alert("Contador cancelado");
+    }
+
+
+</script>
+</body>
+</html>

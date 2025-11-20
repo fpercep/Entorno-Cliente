@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternador de Visibilidad</title>
+</head>
+<body>
+<p id="parrafo">
+    Este es un párrafo de ejemplo que aparecerá y desaparecerá cada 500 milisegundos.
+</p>
+
+<script>
+    const parrafo = document.getElementById('parrafo');
+    let visible = true;
+
+    function mdTexto() {
+        visible = !visible;
+        parrafo.style.display = visible ? 'block' : 'none';
+    }
+    setInterval(mdTexto, 500);
+</script>
+</body>
+</html>

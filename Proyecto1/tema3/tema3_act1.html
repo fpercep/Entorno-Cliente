@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tiempo">0 segundos</div>
+
+<script>
+    let segundos = 0;
+
+    function crono() {
+        segundos++;
+        document.getElementById("tiempo").textContent = segundos + " segundos";
+    }
+
+    window.onload = function () {
+        setInterval(crono, 1000);
+    };
+
+</script>
+</body>
+</html>

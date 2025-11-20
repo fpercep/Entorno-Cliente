@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternador de Visibilidad</title>
+</head>
+<body>
+<script>
+    let correcto = false;
+    let input;
+    do {
+        input= parseInt(prompt('Introduce un numero de segundos:'));
+        if (!isNaN(input) && input >= 0) {
+            correcto = true;
+        }
+    } while (!correcto);
+    let contador = 0;
+    let intervalo = setInterval(revisar, 1000);
+    function  revisar (){
+        contador++;
+        console.log(contador);
+        if (contador >= input) {
+            clearInterval(intervalo);
+            alert("¡¡¡Tiempo acabado!!!!")
+        }
+    }
+</script>
+</body>
+</html>

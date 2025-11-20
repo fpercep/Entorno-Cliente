@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternador de Visibilidad</title>
+</head>
+<body>
+<button onclick="pararImagen()">Parar</button>
+<button onclick="continuar()">Continuar</button><br>
+<img id="imagen" src="imgs/img_0.png" alt="Imagen del texto">
+<script>
+    let tiempoCambio = setInterval(cambiarImagen, 1500);
+    let imagenActual = 0;
+    function cambiarImagen() {
+        let img = document.getElementById('imagen');
+        if (imagenActual < 2){
+            imagenActual ++
+        }else {
+            imagenActual = 0
+        }
+        img.src = `imgs/img_${imagenActual}.png`;
+    }
+
+    function pararImagen() {
+        clearInterval(tiempoCambio);
+    }
+
+    function continuar() {
+        tiempoCambio = setInterval(cambiarImagen, 1500);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternador de Visibilidad</title>
+</head>
+<body>
+<p id="hora"></p>
+<script>
+    setInterval(cambiarHora, 1000);
+
+    function cambiarHora() {
+        let elemento = document.getElementById('hora');
+        let ahora = new Date();
+        let horas = ahora.getHours().toString();
+        let minutos = ahora.getMinutes().toString();
+        let segundos = ahora.getSeconds().toString();
+        elemento.textContent = `${horas}:${minutos}:${segundos}`;
+    }
+</script>
+</body>
+</html>

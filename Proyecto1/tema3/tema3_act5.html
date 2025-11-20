@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternador de Visibilidad</title>
+</head>
+<body>
+<p id="texto">Texto</p>
+<button onclick="empezar()">Cargar</button>
+<button onclick="terminar()">Detener</button>
+<script>
+    let intervalo;
+
+function empezar() {
+    cargar();
+    intervalo = setInterval(cargar, 1000);
+}
+
+function terminar() {
+    clearInterval(intervalo);
+    let elemento = document.getElementById('texto');
+    elemento.textContent = "Texto";
+}
+
+function cargar() {
+    let elemento = document.getElementById('texto');
+    let texto = elemento.textContent;
+
+    if (texto === "Texto") {
+        elemento.textContent = "Cargando.";
+    } else if (texto.length <= 10) {
+        elemento.textContent = texto + ".";
+    } else {
+        elemento.textContent = "Cargando.";
+    }
+}
+</script>
+</body>
+</html>
