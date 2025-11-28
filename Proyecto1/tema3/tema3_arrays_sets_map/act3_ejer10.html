@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const alumnos = [
+        {id:1, nombre:"Ana"},
+        {id:2, nombre:"Pedro"},
+        {id:2, nombre:"Jose"},
+        {id:3, nombre:"Lucía"}
+    ];
+    let alumnoID2 = alumnos.find(alumno => alumno.id === 2);
+    let alumnoID2Pos = alumnos.findIndex(alumno => alumno.id === 2);
+
+    let alumnoID2_atras = alumnos.findLast(alumno => alumno.id === 2);
+    let alumnoID2Pos_atras = alumnos.findLastIndex(alumno => alumno.id === 2);
+
+    console.log("Posición: " +alumnoID2Pos + " Nombre:" + alumnoID2.nombre);
+    console.log("Posición: " + alumnoID2Pos_atras + " Nombre:" + alumnoID2_atras.nombre);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const productos = [
+            { nombre: "Teclado", precio: 25 },
+            { nombre: "Monitor", precio: 180 },
+            { nombre: "Ratón", precio: 15 }
+        ];
+        let nProductos = productos.toSorted();
+        productos.sort((a,b)=> a.precio - b.precio);
+         productos.sort((a,b)=> a.nombre.localeCompare(b.nombre, "es", {sensitivity: "base"}));
+         console.log(productos);
+         console.log(nProductos);
+    </script>
+</body>
+</html>

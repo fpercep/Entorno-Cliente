@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const notas = [5, 8, 4, 7, 9];
+    console.log("Todos aprobaron?");
+    if (notas.every(nota => nota >= 5)) {
+        console.log("Si");
+    }else {
+        console.log("No");
+    }
+    console.log(" ");
+
+    console.log("¿Algún sobresaliente?");
+    if (notas.some(nota => nota >= 9)) {
+        console.log("Si");
+    }else {
+        console.log("No");
+    }
+    console.log(" ");
+
+    console.log("¿Alguna nota menor de 3?");
+    if (notas.some(nota => nota < 3)) {
+        console.log("Si");
+    }else {
+        console.log("No");
+    }
+    console.log(" ");
+
+</script>
+</body>
+</html>
