@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternador de Visibilidad</title>
+</head>
+<body>
+<p id="texto"></p>
+<button onclick="empezar()">Cargar</button>
+<script>
+    let timer;
+    let elemento = document.getElementById('texto');
+
+    function empezar() {
+        timer = setTimeout(cambiarPraparados, 2000);
+    }
+
+    function cambiarPraparados() {
+        clearTimeout(timer);
+        elemento.textContent = "Preparados...";
+        timer = setTimeout(cambiarListos, 2000);
+    }
+
+    function cambiarListos() {
+        clearTimeout(timer);
+        elemento.textContent = "Listos...";
+        timer = setTimeout(cambiarYa, 2000);
+    }
+
+    function cambiarYa() {
+        clearTimeout(timer);
+        elemento.textContent = "!YA!";
+    }
+</script>
+</body>
+</html>
