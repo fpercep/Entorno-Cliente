@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let letras = new Set(["A", "B", "C"]);
+    letras.add("A");
+    console.log(letras);
+    console.log(letras.size);
+    letras.add("D");
+    console.log(letras);
+    console.log(letras.size);
+
+    console.log(letras.has("E"));
+    console.log(letras.has("D"));
+
+    letras.delete("D");
+    console.log(letras);
+
+    letras.clear();
+    console.log(letras);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const set = [5, "A", [1,2,3]];
+
+    //Crea espejo, si modificas nSet se modifica set
+    let nSet = [...set];
+    nSet[0] = 6
+
+    //Crea copia, si modificas cloneSet no se modifica set
+    let cloneSet = [...structuredClone(set)];
+    cloneSet[0] = 4
+
+    console.log(set);
+    console.log(nSet);
+    console.log(cloneSet);
+</script>
+</body>
+</html>

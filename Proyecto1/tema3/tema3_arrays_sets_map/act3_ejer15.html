@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = new Set([1,2,3,4,5]);
+    const b = new Set([4,5,6,7]);
+
+    const union = new Set([...a, ...b]);
+    const union2 = a.union(b);
+    console.log(union);
+    console.log(union2);
+
+    const interseccion = new Set([...a].filter(x => b.has(x)));
+    const interseccion2 = a.intersection(b);
+    console.log(interseccion);
+    console.log(interseccion2);
+
+    const diferencia = new Set([...a].filter(x => !b.has(x)));
+    const diferencia2 = a.difference(b);
+    console.log(diferencia);
+    console.log(diferencia2);
+
+    const exclusion = new Set([
+        ...[...a].filter(x => !b.has(x)),
+        ...[...b].filter(x => !a.has(x))
+    ]);
+    const exclusion2 = a.symmetricDifference(b);
+    console.log(exclusion);
+    console.log(exclusion2);
+</script>
+</body>
+</html>

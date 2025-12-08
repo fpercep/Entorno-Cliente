@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mapa = new Map();
+    let claveObjeto = {
+        id: 100,
+        usuario: null,
+    }
+    mapa.set(claveObjeto, "Valor de clave objeto");
+    mapa.set(1, "Valor de clave Numero");
+    mapa.set("String", "Valor de clave String");
+
+    console.log("Tamaño mapa:" + mapa.size);
+    console.log(mapa.has("String"));
+    console.log(mapa.get(claveObjeto));
+</script>
+</body>
+</html>

@@ -6,14 +6,60 @@
 </head>
 <body>
 <script>
-    matriz_objetos = [
+    const matriz_objetos = [
         {id: 1, texto: "t1", completada: false},
         {id: 2, texto: "t2", completada: true},
-        {id: 3, texto: "t2", completada: false},
+        {id: 3, texto: "t3", completada: false},
     ]
-    function listaObjetos() {
 
+    function listaObjetos() {
+        console.log("Lista Objeto: ");
+        matriz_objetos.forEach(a => {
+            console.log(a.id + " - " + a.texto + " - " + a.completada);
+        });
+        console.log("");
     }
+
+    function anadirTarea(id, texto, completada) {
+        if (!isNaN(parseInt(id)) && typeof texto === "string" && typeof completada === "boolean") {
+            if (matriz_objetos.some(a => a.id === id)) {
+                console.log("Ya existe un objeto con " + id + " como id");
+            } else {
+                matriz_objetos.push({id: id, texto: texto, completada: completada});
+                console.log("Nueva tarea añadida ");
+            }
+        } else {
+            console.log("PARAMETROS INCORRECTOS");
+        }
+    }
+
+    function completarTarea(id) {
+        if (matriz_objetos.some(a => a.id === id)) {
+            let tarea =  matriz_objetos.find(a => (  a.id === id));
+            tarea.completada = true;
+        }
+    }
+
+    function filtrarTareas(completada) {
+        if (typeof (completada) === "boolean") {
+            return matriz_objetos.filter(a => a.completada === completada);
+        } else {
+            console.log("ERROR");
+        }
+    }
+
+    function buscarTarea(input) {
+        if (typeof (input) === "string") {
+            return matriz_objetos.filter(a => a.texto === input);
+        }
+    }
+
+    anadirTarea(4, "t4", false)
+    anadirTarea(4, "t4", false)
+    completarTarea(4)
+    listaObjetos(matriz_objetos)
+    console.log(filtrarTareas(true))
+    console.log(buscarTarea("t2"))
 </script>
 </body>
 </html>

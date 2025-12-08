@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const set = new Set(["A", "B", "C"]);
+    let arraySet = [...set];
+    let arrySetCopia = structuredClone(arraySet)
+     arrySetCopia[0] = "A2.0"
+    console.log(arraySet);
+    console.log(arrySetCopia);
+</script>
+</body>
+</html>

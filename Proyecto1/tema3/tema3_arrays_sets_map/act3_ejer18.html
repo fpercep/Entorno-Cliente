@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const inventario = new Map();
+    inventario.set("portatil", 1500);
+    inventario.set("raton", 25);
+    inventario.set("teclado", 50);
+
+    let pares = [...inventario];
+    let valores = [...inventario.values()];
+    let claves = [...inventario.keys()];
+    console.log(claves, valores, pares);
+</script>
+</body>
+</html>
