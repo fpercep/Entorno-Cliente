@@ -8,20 +8,55 @@
     <script>
          function establecerCookie(nombre, valor, dias) {
             let valorEncript = encodeURIComponent(valor);
-            document.cookie = nombre + "=" + valorEncript + ";expires=" + cacularDia(dias);
+            document.cookie = nombre + "=" + valorEncript + ";expires=" + calcularDia(dias)  + ";path=/";
          }
-         function cacularDia(dias) {
+         function calcularDia(dias) {
              let hoy = new Date();
-             let fecha = hoy.getTime() + dias * (24 * 60 * 60 * 1000);
-             let fechaString = fecha.toUTCString();
-             return fechaString;
+             let nuevoDia = new Date(hoy.getTime() + Number(dias) * (24 * 60 * 60 * 1000));
+             return nuevoDia.toUTCString();
          }
-         function obtenerCookie(nombre) {
 
+         function cacularDiaV2(dias) {
+             let hoy = new Date();
+             hoy.getDate = hoy.getDate() + dias;
+         }
+
+         function obtenerCookie(nombre) {
+             let cookies = document.cookie.split(';');
+             return cookies.find(cookie => cookie.trim().startsWith(nombre + "="))
          }
          function comprobarCookie(nombre){
-
+             if (obtenerCookie(nombre) === null){
+                 alert("Bienvenido de nuevo, " + obtenerValorCookie(nombre));
+             }else {
+                 solicitarCookie(nombre);
+             }
          }
+
+         function obtenerValorCookie(nombre){
+             let cookie = obtenerCookie(nombre);
+             if (cookie !== null) {
+                    return cookie.split("=")[1];
+             }
+             alerta("La cookie" + nombre + " no existe");
+         }
+
+         function solicitarCookie(nombre){
+             let valor = prompt("Introduce el valor de cookie " + nombre + ":");
+             let correcto = false
+             let dias = 0;
+             do {
+                 dias = Number(prompt("Introduce sus días de caducidad de cookie :"));
+                 if (!isNaN(dias) && dias >= 0) {
+                     correcto = true;
+                 }
+             }while (!correcto)
+             establecerCookie(nombre, valor, dias);
+             alert("Cookie guardada.")
+         }
+
+         establecerCookie("usuario", "Juan", "2")
+         comprobarCookie("usuario");
 </script>
 </body>
 </html>
