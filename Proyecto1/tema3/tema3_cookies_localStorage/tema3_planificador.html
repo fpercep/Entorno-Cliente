@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planificador</title>
+</head>
+<body>
+<script>
+    const actividades = [
+        {
+            nombre: "Paseo Monte",
+            tipo: "senderismo",
+            fecha: new Date("2025-10-12"), // 12 de Octubre de 2025
+            precio: 10
+        },
+        {
+            nombre: "Ruta en Kayak",
+            tipo: "acuático",
+            fecha: new Date("2025-07-15"), // 15 de Julio de 2025
+            precio: 25.50
+        },
+        {
+            nombre: "Taller de Fotografía",
+            tipo: "educativo",
+            fecha: new Date("2025-11-05"), // 5 de Noviembre de 2025
+            precio: 50
+        },
+        {
+            nombre: "Escalada en Roca",
+            tipo: "aventura",
+            fecha: new Date("2025-09-20"), // 20 de Septiembre de 2025
+            precio: 35
+        },
+        {
+            nombre: "Visita Guiada Museo",
+            tipo: "cultural",
+            fecha: new Date("2025-12-01"), // 1 de Diciembre de 2025
+            precio: 12
+        }
+    ];
+
+    let actividadesXParcipantes = new Map;
+    participantesPorActividad();
+
+    function normalizarTexto(texto){
+        return texto.toLowerCase().trim();
+    }
+    
+    function filtrarPorTipo(tipoBuscado){
+        let output = [];
+        for (let actividad of actividades) {
+            if (normalizarTexto(tipoBuscado) === normalizarTexto(actividad.tipo)){
+                output.push(actividad);
+            }
+        }
+        return output;
+    }
+
+    function bucarActividad(palabra){
+       return actividades.filter( actividad => (normalizarTexto(actividad.nombre)).includes(normalizarTexto(palabra)));
+    }
+
+    // El enuciado tiene un error y da entender que esta función debe crear un variable global.
+    function participantesPorActividad() {
+        actividades.forEach(actividad => actividadesXParcipantes.set(actividad.nombre, 0));
+    }
+
+    function apuntarParticipantes(nombreActivdad, cantidad) {
+        if (comprobarNombre(nombreActivdad)){
+            actividadesXParcipantes.set(nombreActivdad, cantidad);
+        }else {
+            alert("La actividad no fue encontrada, creala y vuelve a intentarlo");
+        }
+    }
+
+    function comprobarNombre(nombre) {
+       return actividades.some(actividad =>  normalizarTexto(actividad.nombre)  === normalizarTexto(nombre));
+    }
+
+    function diasParaLaActividad(fecha){
+        let hoy = new Date();
+        let diferencia = fecha.getTime() - hoy.getTime();
+        return  (diferencia / (1000 * 60 * 60 * 24));
+    }
+
+    function guardarEnStorage(){
+        localStorage.setItem("misActividades",JSON.stringify(actividades));
+
+        let arrayActividadesParticipantes = [...actividadesXParcipantes];
+        sessionStorage.setItem("participantes", JSON.stringify(arrayActividadesParticipantes));
+    }
+
+    function crearCookieActFavorita(actividadFavorita){
+        if (comprobarNombre(actividadFavorita)){
+            let nombreEncript = encodeURIComponent(actividadFavorita.toUpperCase());
+            let fecha = new Date();
+            fecha.setDate(fecha.getDate() + 5);
+            document.cookie = "actividadFavorita=" + nombreEncript +";expires=" + fecha.toUTCString() + ";path=/";
+        }
+    }
+</script>
+</body>
+</html>

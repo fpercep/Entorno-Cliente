@@ -16,46 +16,38 @@
              return nuevoDia.toUTCString();
          }
 
-         function cacularDiaV2(dias) {
-             let hoy = new Date();
-             hoy.getDate = hoy.getDate() + dias;
-         }
-
          function obtenerCookie(nombre) {
              let cookies = document.cookie.split(';');
              return cookies.find(cookie => cookie.trim().startsWith(nombre + "="))
          }
          function comprobarCookie(nombre){
-             if (obtenerCookie(nombre) === null){
-                 alert("Bienvenido de nuevo, " + obtenerValorCookie(nombre));
-             }else {
+             if (!obtenerCookie(nombre)){
                  solicitarCookie(nombre);
+             }else {
+                 alert("Bienvenido de nuevo, " + obtenerValorCookie(nombre));
              }
          }
 
          function obtenerValorCookie(nombre){
              let cookie = obtenerCookie(nombre);
-             if (cookie !== null) {
-                    return cookie.split("=")[1];
+             if (!cookie) {
+                 alert("La cookie " + nombre + " no existe");
+             }else {
+                 console.log(cookie.split("=")[1])
+                 return decodeURIComponent(cookie.split("=")[1]);
              }
-             alerta("La cookie" + nombre + " no existe");
          }
 
          function solicitarCookie(nombre){
              let valor = prompt("Introduce el valor de cookie " + nombre + ":");
-             let correcto = false
-             let dias = 0;
-             do {
-                 dias = Number(prompt("Introduce sus días de caducidad de cookie :"));
-                 if (!isNaN(dias) && dias >= 0) {
-                     correcto = true;
-                 }
-             }while (!correcto)
-             establecerCookie(nombre, valor, dias);
+             if (valor === null || valor.trim() === "") {
+                 alert("La cookie no se puedo crear de una manera correcta");
+                 return;
+             }
+             establecerCookie(nombre, valor, 30);
              alert("Cookie guardada.")
          }
 
-         establecerCookie("usuario", "Juan", "2")
          comprobarCookie("usuario");
 </script>
 </body>
