@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            const clase = [
+                { alumno: "Juan", notas: [6, 7, 8] },
+                { alumno: "Lucía", notas: [9, 9, 10] },
+                { alumno: "Pedro", notas: [3, 4, 2] },
+                { alumno: "Marta", notas: [5, 5, 6] }
+            ];
+
+
+            const conMedia = clase.map(item => {
+                let suma = item.notas.reduce((acc, nota) => acc + nota, 0);
+                let media = suma / item.notas.length;
+                return { ...item, media: parseFloat(media.toFixed(2)) };
+            });
+
+            console.log("--- Alumnos con media ---");
+            console.log(conMedia);
+
+            const aprobados = conMedia.filter(alumno => alumno.media >= 5);
+            console.log("--- Aprobados ---");
+            console.log(aprobados);
+
+            const haySuspensoGrave = clase.some(alumno =>
+                alumno.notas.some(nota => nota < 4)
+            );
+            console.log("¿Hay algún suspenso grave?", haySuspensoGrave);
+
+            const todosAprobados = conMedia.every(alumno => alumno.media >= 5);
+            console.log("¿Todos tienen media >= 5?", todosAprobados);
+        </script>
+</body>
+</html>

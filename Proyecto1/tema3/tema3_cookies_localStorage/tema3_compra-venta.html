@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Compra Venta</title>
+</head>
+<body>
+<script>
+    const productos = [
+        { id: 1, titulo: "Bicicleta de montaña", categoria: "Deportes", precio: 150 },
+        { id: 2, titulo: "iPhone 12", categoria: "Electrónica", precio: 400 },
+        { id: 3, titulo: "Sofá cama", categoria: "Hogar", precio: 200 },
+        { id: 4, titulo: "Raqueta Tenis", categoria: "Deportes", precio: 50 },
+        { id: 5, titulo: "Monitor PC", categoria: "Electrónica", precio: 120 }
+    ];
+
+    let ventas = new Map();
+
+    function normalizarTexto(texto) {
+        return texto.toLowerCase().trim();
+    }
+
+    function filtrarPorCategoria(categoria) {
+        return productos.filter(p => normalizarTexto(p.categoria) === normalizarTexto(categoria));
+    }
+
+    function buscarProducto(palabra) {
+        let termino = normalizarTexto(palabra);
+        return productos.filter(p => normalizarTexto(p.titulo).includes(termino));
+    }
+
+    function registrarVenta(id) {
+        if (productos.some(p => p.id === id)) {
+            let cantidadActual = ventas.has(id) ? ventas.get(id) : 0;
+            ventas.set(id, cantidadActual + 1);
+            console.log(`Venta registrada para ID ${id}. Total vendidas: ${ventas.get(id)}`);
+        } else {
+            console.log("Producto no encontrado");
+        }
+    }
+
+    function guardarPublicaciones() {
+        sessionStorage.setItem("misPublicaciones", JSON.stringify(productos));
+        console.log("Publicaciones guardadas en sessionStorage.");
+    }
+
+    function calcularDia(dias) {
+        let hoy = new Date();
+        let nuevoDia = new Date(hoy.getTime() + Number(dias) * (24 * 60 * 60 * 1000));
+        return nuevoDia.toUTCString();
+    }
+
+    function establecerCookieUsuario(usuario) {
+        if (usuario) {
+            let valor = normalizarTexto(usuario);
+            let valorEncript = encodeURIComponent(valor);
+            document.cookie = "usuarioCompras=" + valorEncript + ";expires=" + calcularDia(1) + ";path=/";
+            console.log("Cookie 'usuarioCompras' creada.");
+        }
+    }
+
+    console.log("Filtrar 'Electrónica':", filtrarPorCategoria("Electrónica"));
+    console.log("Buscar 'mueble':", buscarProducto("mueble")); // Vacío
+    console.log("Buscar 'Bicicleta':", buscarProducto("Bicicleta"));
+
+    registrarVenta(2);
+    registrarVenta(2);
+    guardarPublicaciones();
+    establecerCookieUsuario("JuanPerez");
+
+</script>
+</body>
+</html>

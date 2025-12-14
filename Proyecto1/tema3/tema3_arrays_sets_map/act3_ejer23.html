@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const inventario = [
+            { id: 1, nombre: "Portátil", categoria: "Electrónica", precio: 1500 },
+            { id: 2, nombre: "Ratón", categoria: "Periféricos", precio: 25 },
+            { id: 3, nombre: "Teclado", categoria: "Periféricos", precio: 50 },
+            { id: 4, nombre: "Monitor", categoria: "Electrónica", precio: 200 },
+            { id: 5, nombre: "Silla", categoria: "Mobiliario", precio: 100 }
+        ];
+
+        const categorias = new Set(inventario.map(prod => prod.categoria));
+        console.log("Categorías únicas:", categorias);
+
+        const productosPorCategoria = new Map();
+
+        categorias.forEach(cat => {
+            const prods = inventario.filter(p => p.categoria === cat);
+            productosPorCategoria.set(cat, prods);
+        });
+
+        console.log("--- Map Categoría -> Productos ---");
+        console.log(productosPorCategoria);
+
+        const caros = inventario.filter(p => p.precio > 60);
+        console.log("Productos > 60€:", caros);
+
+        const ordenadoPorNombreMutado = [...inventario].sort((a, b) => a.nombre.localeCompare(b.nombre));
+        console.log("Ordenado con sort (mutando copia):", ordenadoPorNombreMutado);
+
+        const ordenadoPrecio = inventario.toSorted((a, b) => a.precio - b.precio);
+        console.log("Ordenado por precio (toSorted):", ordenadoPrecio);
+        console.log("Inventario original intacto:", inventario[0].nombre);
+
+        function buscarProducto(nombre) {
+            return inventario.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
+        }
+        console.log("Buscando 'ratón':", buscarProducto("ratón"));
+    </script>
+</body>
+</html>

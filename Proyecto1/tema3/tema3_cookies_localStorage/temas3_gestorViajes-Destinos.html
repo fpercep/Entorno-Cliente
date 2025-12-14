@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor Viajes</title>
+</head>
+<body>
+<script>
+    const destinos = [
+        { id: 1, ciudad: "París", pais: "Francia", fechaObjetivo: new Date("2025-06-15") },
+        { id: 2, ciudad: "Tokio", pais: "Japón", fechaObjetivo: new Date("2025-09-10") },
+        { id: 3, ciudad: "Lyon", pais: "Francia", fechaObjetivo: new Date("2025-07-01") },
+        { id: 4, ciudad: "Roma", pais: "Italia", fechaObjetivo: new Date("2025-05-20") }
+    ];
+
+    function normalizarTexto(cadena) {
+        return cadena.trim().toLowerCase();
+    }
+
+    let paisesVisitados = new Map();
+
+    function calcularEstadisticasPaises() {
+        destinos.forEach(destino => {
+            let paisNorm = normalizarTexto(destino.pais);
+            let cuenta = paisesVisitados.has(paisNorm) ? paisesVisitados.get(paisNorm) + 1 : 1;
+            paisesVisitados.set(paisNorm, cuenta);
+        });
+    }
+
+    function diasRestantes(fechaObjetivo) {
+        let hoy = new Date();
+        let diferencia = fechaObjetivo.getTime() - hoy.getTime();
+        return Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+    }
+
+    function filtrarPorPais(pais) {
+        let paisBuscado = normalizarTexto(pais);
+        return destinos.filter(d => normalizarTexto(d.pais) === paisBuscado);
+    }
+
+    function guardarDestinos() {
+        localStorage.setItem("misDestinos", JSON.stringify(destinos));
+        console.log("Destinos guardados en localStorage.");
+    }
+
+    function calcularDia(dias) {
+        let hoy = new Date();
+        let nuevoDia = new Date(hoy.getTime() + Number(dias) * (24 * 60 * 60 * 1000));
+        return nuevoDia.toUTCString();
+    }
+
+    function crearCookiePreferencia(ciudadFavorita) {
+        if (ciudadFavorita) {
+            let valor = encodeURIComponent(ciudadFavorita.toUpperCase());
+            document.cookie = "preferenciaViaje=" + valor + ";expires=" + calcularDia(7) + ";path=/";
+            console.log("Cookie 'preferenciaViaje' creada: " + ciudadFavorita.toUpperCase());
+        }
+    }
+
+    calcularEstadisticasPaises();
+    console.log("Estadísticas por país:", paisesVisitados);
+
+    console.log("Días para ir a París:", diasRestantes(destinos[0].fechaObjetivo));
+
+    console.log("Destinos en Francia:", filtrarPorPais("Francia"));
+
+    guardarDestinos();
+    crearCookiePreferencia("Tokio");
+</script>
+</body>
+</html>

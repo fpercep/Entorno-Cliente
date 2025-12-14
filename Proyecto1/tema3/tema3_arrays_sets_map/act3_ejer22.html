@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            const texto = "Hola, mundo. Hola de nuevo: mundo cruel. ¡Mundo!";
+
+
+            const palabras = texto.toLowerCase().replace(/[.,:;!¡?¿]/g, "").split(" ").filter(p => p !== "");
+
+            console.log("Array limpio:", palabras);
+
+            const palabrasUnicas = new Set(palabras);
+            console.log("Palabras únicas:", palabrasUnicas);
+
+            console.log("Cantidad de palabras diferentes:", palabrasUnicas.size);
+
+            const mapaFrecuencias = new Map();
+
+            palabras.forEach(palabra => {
+                if (mapaFrecuencias.has(palabra)) {
+                    mapaFrecuencias.set(palabra, mapaFrecuencias.get(palabra) + 1);
+                } else {
+                    mapaFrecuencias.set(palabra, 1);
+                }
+            });
+
+            console.log("--- Frecuencia de palabras ---");
+            console.log(mapaFrecuencias);
+        </script>
+</body>
+</html>
