@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nombres = ["Ana", "Luis", "Marta"];
+
+    function modificarArray(array, callback) {
+        array.push(prompt("Introduce un nombre"));
+        callback()
+    }
+
+    modificarArray(nombres, () => {
+        console.log(nombres.length)
+    });
+
+    modificarArray(nombres, () => {
+        nombres.forEach(nombre => console.log(nombre));
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <script>
+            // Es un función clausuras en la que se suma 1 a cuenta de manera interna en cada ejecución
+            const contador = (function() {
+                let cuenta = 0;
+                return function() {
+                    cuenta++;
+                    return cuenta;
+                };
+            })();
+
+            console.log(contador()); // Se suma 1 a cuenta(0) y luego lo muestra
+            console.log(contador()); // Se suma 1 a cuenta(1) y luego lo muestra
+            console.log(contador()); // Se suma 1 a cuenta(2) y luego lo muestra
+
+            const crearContador = function(valorInicial) {
+                let cuenta = valorInicial;
+                return function() {
+                    cuenta++;
+                    return cuenta;
+                };
+            };
+
+            let contadorV2 = crearContador(10);
+            console.log(contadorV2());
+        </script>
+</body>
+</html>

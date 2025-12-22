@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function exito (){
+        console.log("Exito")
+    }
+
+    function fracaso(){
+        console.log("Fracaso")
+    }
+
+    function ejecutarTarea(onSuccess, onError){
+       const tareaExitosa = Math.random() > 0.5;
+
+       if(tareaExitosa){
+           onSuccess()
+       }else {
+           onError()
+       }
+    }
+
+    ejecutarTarea(exito, fracaso)
+    ejecutarTarea(exito, fracaso)
+    ejecutarTarea(exito, fracaso)
+    ejecutarTarea(exito, fracaso)
+</script>
+</body>
+</html>
