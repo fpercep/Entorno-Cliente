@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<img id="foto" src="img1.jpg" alt="Imagen inicial" width="200"  >
+<a id="enlace" href="https://www.google.com" target="_blank">Ir a Google</a>
+<button id="btnVer">Ver atributos</button>
+<button id="btnCambiar">Cambiar src y href</button>
+<button id="btnQuitar">Quitar alt y target</button>
+<button id="btnComprobar">Comprobar atributos</button>
+</body>
+<script>
+    const verAtributos = document.getElementById("btnVer");
+    const cambiar = document.getElementById("btnCambiar");
+    const quitar = document.getElementById("btnQuitar");
+    const comprobar = document.getElementById("btnComprobar");
+
+    const foto = document.getElementById("foto");
+    const enlace = document.getElementById("enlace");
+
+    verAtributos.addEventListener("click", () => {
+
+        console.log("Atributo src:", foto.getAttribute("src"));
+        console.log("Atributo href:", enlace.getAttribute("href"));
+
+        console.log("Propiedad width:", foto.width);
+        console.log("Propiedad target:", enlace.target)
+    })
+
+    cambiar.addEventListener("click", () => {
+        foto.setAttribute("src", "img2.jpg");
+        enlace.setAttribute("href", "https://www.youtube.com");
+        enlace.textContent = "Ir a Youtube";
+    })
+
+    quitar.addEventListener("click", () => {
+        foto.removeAttribute("alt");
+        enlace.removeAttribute("target");
+    })
+
+    comprobar.addEventListener("click", () => {
+        console.log("Tiene el atributo alt: ", foto.hasAttribute("alt"));
+        console.log("Tiene el atributo target: ", enlace.hasAttribute("target"));
+
+        console.log("--- DIFERENCIA (Punto 5) ---");
+        console.log("Atributo width (getAttribute):", foto.getAttribute("width"), "| Tipo:", typeof foto.getAttribute("width"));
+        console.log("Propiedad width (img.width):", foto.width, "| Tipo:", typeof foto.width);
+    })
+
+
+</script>
+</html>
+
