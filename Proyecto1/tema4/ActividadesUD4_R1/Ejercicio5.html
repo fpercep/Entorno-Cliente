@@ -29,7 +29,22 @@
     <button id="btnBorrar">Eliminar primera tarea</button>
 
     <script>
-        // Aquí irá el código JavaScript
+        const tareas = document.getElementsByClassName('tarea');
+        const modificar = document.getElementById('btnModificar');
+        const elminar = document.getElementById('btnBorrar');
+
+        modificar.addEventListener('click', () => {
+            const tarea = tareas[0]
+            let descripciones = tarea.getElementsByClassName('descripcion');
+            let parrafo = descripciones[0];
+            parrafo.firstChild.nodeValue += " (Terminado)";
+            tarea.setAttribute('data-estado', 'completado');
+        })
+
+        elminar.addEventListener('click', () => {
+            const tarea = tareas[0]
+            tarea.parentNode.removeChild(tarea)
+        })
     </script>
 
 </body>

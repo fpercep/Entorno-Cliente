@@ -34,16 +34,3 @@
         }
     }
 
-    //Actividad 1:
-    let descripcionAct2 = document.getElementById("descripcion");
-    let btnOcultar = document.getElementById('btnOcultar');
-    let btnMostrar = document.getElementById('btnMostrar');
-
-    btnOcultar.addEventListener('click', function () {
-        descripcionAct2.style.display = 'none';
-    });
-
-    btnMostrar.addEventListener('click', function () {
-        descripcionAct2.style.display = "block";
-    });
-

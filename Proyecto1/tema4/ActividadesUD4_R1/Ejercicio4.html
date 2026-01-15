@@ -23,7 +23,21 @@
     <button id="btnEliminar">Eliminar último aviso</button>
 
     <script>
-        // Aquí irá el código JavaScript
+        const lista = document.getElementById('listaAvisos');
+        const agregar = document.getElementById('btnAgregar');
+        const eliminar = document.getElementById('btnEliminar');
+
+        agregar.addEventListener('click', () => {
+            const nuevoAviso = document.createElement('li');
+            const textoAviso = document.createTextNode('Nuevo aviso importante');
+            nuevoAviso.appendChild(textoAviso);
+            nuevoAviso.setAttribute('class', 'aviso');
+            lista.appendChild(nuevoAviso);
+        });
+        eliminar.addEventListener('click', () => {
+            const ultimoEvento = lista.lastChild;
+            lista.removeChild(ultimoEvento);
+        });
     </script>
 
 </body>
