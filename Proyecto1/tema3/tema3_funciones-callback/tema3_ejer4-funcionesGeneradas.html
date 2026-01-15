@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
+    <script>
+        function* colores() {
+            let colores = ["Rojo", "Verde", "Azul"]
 
+            for (let color of colores) {
+                yield color;
+            }
+        }
+
+        const genColores = colores();
+
+        console.log(genColores.next());
+        console.log(genColores.next());
+        console.log(genColores.next());
+        console.log(genColores.next());
+
+        for (let color of colores()) {
+            console.log(color);
+        }
+
+    </script>
 </body>
 </html>

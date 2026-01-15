@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const texto = `
+    Pedro nació el 1998-07-21.
+    Sonia nació el 2003-11-05.
+    La fecha incorrecta es 21-07-1998.
+    Mi correo es ejemplo123@gmail.com
+    Teléfono: 678-123-456
+    Palabras: perro, pato, saco, Sapo, mesa, sol, pico, pera
+    `;
+
+
+    //Punto (.): El comodín universal. Coincide con cualquier carácter excepto saltos de línea.
+
+    function probarRegexp(text, regexp) {
+        let palabras = text.trim().replace(/[.,:;]/g, "").split(/\s+/);
+        let correctas = [];
+        for (const palabra of palabras) {
+            if (regexp.test(palabra)) {correctas.push(palabra)}
+        }
+        console.log(correctas);
+    }
+
+    let regexp4Palabras = /^[a-zA-ZáéíóúñÑ]{4}$/
+    let regexpP_ = /^p.*/i;
+    let regexp_A = /.*a$/i;
+    let regexpP_O = /^p.*o$/i;
+
+
+    //Alternancia (|): El operador lógico OR. Coincide con la expresión a su izquierda o la expresión a su derecha.
+    let regexP_o_S_O_oA = /^(p|s).*(o|a)$/i
+    // En webstorm marca | como ineficiente, ya que no tiene sentido usarlo para dos caracteres individuales
+    // Esta seria la opción mas correcta : let regexP_o_S_O_oA = /^[ps].*[oa]$/i;
+
+
+
+    let regexp_Numero2_4 = /^[0-9]{2,4}$/
+    let regexpDectPalabra = /^disparos?$/i
+    //Asterisco (*): El cuantificador "cero o más". Coincide con el elemento anterior desde ninguna vez hasta infinitas veces.
+    //Signo más (+): El cuantificador "uno o más". Coincide con el elemento anterior al menos una vez o infinitas veces.
+    //Interrogación (?): El cuantificador de opcionalidad. Coincide con el elemento anterior cero o una sola vez.
+
+
+    let regexp_NoNumero = /[^0-9]/
+    let regexp_NoVocal = /^[^aeiouáéíóú].*/i
+    //Negación ([^...]): Cuando se coloca como el primer carácter dentro de corchetes, invierte el sentido de la clase, coincidiendo con cualquier carácter que NO esté definido en el conjunto.
+
+    let regexpFecha = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/
+    const fechaValidar = "2025-12-15";
+    const esValida = regexpFecha.test(fechaValidar);
+    console.log("¿Es válida?:", esValida);
+
+    const resultadoExec = regexpFecha.exec(texto);
+    console.log("Fecha extraída:", resultadoExec[0])
+
+    let regexpFecha2 = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/
+
+    const coincidencia = regexpFecha2.exec(texto);
+
+    if (coincidencia) {
+        console.log("Coincidencia completa:", coincidencia[0]);
+        console.log("Año:", coincidencia[1]);
+        console.log("Mes:", coincidencia[2]);
+        console.log("Día:", coincidencia[3]);
+    }
+
+    const regexp_PatoGlobal = /pato/gi;
+
+    console.log("Flags activos:", regexp_PatoGlobal.flags);
+    console.log("Patrón (source):", regexp_PatoGlobal.source);
+
+    const textoFechas = "Eventos: 2024-05-10, 2025-11-20 y 2026-01-07.";
+    const regexpGlobal = /\d{4}-\d{2}-\d{2}/g;
+
+    console.log("1. Inicio lastIndex:", regexpGlobal.lastIndex); // 0
+
+    let res1 = regexpGlobal.exec(textoFechas);
+    console.log("Match 1:", res1[0], "| Nuevo lastIndex:", regexpGlobal.lastIndex);
+
+    let res2 = regexpGlobal.exec(textoFechas);
+    console.log("Match 2:", res2[0], "| Nuevo lastIndex:", regexpGlobal.lastIndex);
+
+    const regexpEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+    const regexpTelefono = /^\d{3}-\d{3}-\d{3}$/;
+
+    console.log("Palabras con 4 letras: ");
+    probarRegexp(texto, regexp4Palabras);
+    console.log("-------------------");
+
+    console.log("Palabras que empiezan por P: ");
+    probarRegexp(texto, regexpP_);
+    console.log("-------------------");
+
+    console.log("Palabras que terminan por A: ");
+    probarRegexp(texto, regexp_A);
+    console.log("-------------------");
+
+    console.log("Palabras que empiezan por P y terminan por 0: ");
+    probarRegexp(texto, regexpP_O);
+    console.log("-------------------");
+
+    console.log("Palabras que empiezan por P o S y terminan por 0 o A: ");
+    probarRegexp(texto, regexP_o_S_O_oA);
+    console.log("-------------------");
+
+
+
+</script>
+</body>
+</html>
