@@ -18,14 +18,30 @@
 <script>
 
     const mensaje = document.getElementById('mensaje');
+
     const btnAdd = document.getElementById('btnAdd');
     const btnRemove = document.getElementById('btnRemove');
     const btnToggle = document.getElementById('btnToggle');
     const btnStyle = document.getElementById('btnStyle');
 
     btnAdd.addEventListener('click', () => {
-
+        mensaje.classList.add("resaltado", "alerta");
+        console.log("¿Tiene la clase 'alerta'?:", mensaje.classList.contains('alerta'));
     })
+    btnRemove.addEventListener('click', () => {
+        mensaje.classList.remove("resaltado", "alerta");
+        console.log("¿Tiene la clase 'alerta'?:", mensaje.classList.contains('alerta'));
+    })
+    btnToggle.addEventListener('click', () => {
+        mensaje.classList.toggle("resaltado");
+    })
+
+    btnStyle.addEventListener('click', () => {
+        mensaje.style.fontStyle = 'italic';
+        mensaje.style.border = '2px solid red';
+    })
+
+
 </script>
 </html>
 
