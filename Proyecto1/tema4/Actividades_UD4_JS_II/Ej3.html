@@ -9,17 +9,30 @@
   <p>Segundo párrafo</p>
 </div>
 <button id="btnCambiarTexto">Cambiar texto</button>
-<button id="btnAñadirElemento">Añadir párrafo</button>
+<button id="btnAnadirElemento">Añadir párrafo</button>
 <button id="btnReemplazar">Reemplazar primer párrafo</button>
 <button id="btnEliminar">Eliminar último párrafo</button>
 </body>
 <script>
     const contenido = document.getElementById('contenido');
-
     const btnCambiarTexto = document.getElementById("btnCambiarTexto");
-    btnCambiarTexto.addEventListener("click", () => {
+    const btnAnadirElemento = document.getElementById("btnAnadirElemento");
+    const btnReemplazar = document.getElementById("btnReemplazar");
 
+    btnCambiarTexto.addEventListener("click", () => {
+        let primerParrafo = contenido.firstElementChild;
+        let ultimoParrafo = contenido.lastElementChild;
+        primerParrafo.innerText = primerParrafo.textContent + "(modificado)";
+        ultimoParrafo.innerHTML = '<strong> ' + ultimoParrafo.textContent + ' </strong>';
     })
+
+    btnAnadirElemento.addEventListener('click', () => {
+        const nuevoParrafo = document.createElement('p');
+        nuevoParrafo.textContent = "Párrafo añadido";
+        contenido.appendChild(nuevoParrafo);
+    })
+
+
 </script>
 </html>
 
