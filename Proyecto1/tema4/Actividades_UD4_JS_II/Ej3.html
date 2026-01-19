@@ -18,12 +18,17 @@
     const btnCambiarTexto = document.getElementById("btnCambiarTexto");
     const btnAnadirElemento = document.getElementById("btnAnadirElemento");
     const btnReemplazar = document.getElementById("btnReemplazar");
+    const btnEliminar = document.getElementById("btnEliminar");
 
     btnCambiarTexto.addEventListener("click", () => {
-        let primerParrafo = contenido.firstElementChild;
-        let ultimoParrafo = contenido.lastElementChild;
-        primerParrafo.innerText = primerParrafo.textContent + "(modificado)";
-        ultimoParrafo.innerHTML = '<strong> ' + ultimoParrafo.textContent + ' </strong>';
+        const parrafos = contenido.getElementsByTagName('p');
+        if (parrafos.length >= 2) {
+            parrafos[1].innerHTML = '<strong> ' +  parrafos[1].textContent + ' </strong>';
+        }
+
+        if (parrafos.length >= 1) {
+            parrafos[0].innerText =  parrafos[0].textContent + "(modificado)";
+        }
     })
 
     btnAnadirElemento.addEventListener('click', () => {
@@ -32,7 +37,24 @@
         contenido.appendChild(nuevoParrafo);
     })
 
+    btnReemplazar.addEventListener("click", () => {
+        if (contenido.firstElementChild) {
+            const nuevoParrafo = document.createElement('p');
+            nuevoParrafo.textContent = "Primer párrafo remplazado"
+            contenido.replaceChild(nuevoParrafo, contenido.firstElementChild);
+        }
+    })
 
+    btnEliminar.addEventListener("click", () => {
+        if (contenido.lastElementChild) {
+            contenido.removeChild(contenido.lastElementChild);
+        }
+    })
+
+    if (contenido.firstElementChild) {
+        const parrafoClonado = contenido.firstElementChild.cloneNode(true);
+        contenido.appendChild(parrafoClonado);
+    }
 </script>
 </html>
 

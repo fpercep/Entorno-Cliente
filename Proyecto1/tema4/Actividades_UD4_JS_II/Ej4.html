@@ -11,5 +11,23 @@
 </div>
 <p id="info">Haz clic en un botón</p>
 </body>
+<script>
+    const menu = document.getElementById('menu');
+
+    menu.addEventListener('click', (event) => {
+
+        const destinoClick = event.target;
+        const contenidoRaiz = event.currentTarget;
+        const info = document.getElementById('info');
+
+        if (destinoClick.tagName === 'BUTTON') {
+            destinoClick.style.color = "green";
+            contenidoRaiz.style.border = "1px solid black";
+
+            info.textContent = destinoClick.textContent;
+        }
+    })
+</script>
 </html>
+
 
