@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Cards</title>
+  <style>
+    .card {
+      border: 1px solid #999;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    .activa {
+      background-color: #d0ebff;
+    }
+  </style>
+</head>
+<body>
+
+<div id="cards">
+  <div class="card">
+    <h4>Producto 1</h4>
+    <button>Seleccionar</button>
+  </div>
+
+  <div class="card">
+    <h4>Producto 2</h4>
+    <button>Seleccionar</button>
+  </div>
+
+  <div class="card">
+    <h4>Producto 3</h4>
+    <button>Seleccionar</button>
+  </div>
+</div>
+
+<script>
+    let botones = document.querySelectorAll('#cards .card button');
+    botones.forEach(boton => {
+        boton.addEventListener('click', () => {
+            let tarjeta = boton.closest('.card');
+            let siguienteTarjeta = tarjeta.nextElementSibling;
+            if (siguienteTarjeta != null) {
+                siguienteTarjeta.classList.add('activa');
+            }else {
+                console.log('Siguiente Tarjeta No Existente');
+            }
+            tarjeta.classList.add('activa');
+        })
+    })
+</script>
+</body>
+</html>

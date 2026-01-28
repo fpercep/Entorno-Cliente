@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Navegación DOM</title>
+  <style>
+    .contenedor {
+      border: 2px solid #333;
+      padding: 10px;
+      width: 400px;
+    }
+    article {
+      border: 1px solid #aaa;
+      margin: 5px 0;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="contenedor">
+  <article id="articulo1">
+    <h3>Título 1</h3>
+    <p>Contenido del artículo 1</p>
+  </article>
+
+  <article id="articulo2">
+    <h3>Título 2</h3>
+    <p>Contenido del artículo 2</p>
+  </article>
+</div>
+
+<script>
+    let articulo1 = document.getElementById('articulo1');
+
+    console.log("Nodo padre: ", articulo1.parentNode);
+    console.log("Nodos hijos: ", articulo1.childNodes);
+    console.log("Elementos hijos: ", articulo1.children);
+
+    let primerNodoHijo = articulo1.firstChild;
+    console.log("Primer Nodo Hijo: ", primerNodoHijo);
+    let siguienteNodoHijo = primerNodoHijo.nextSibling;
+    console.log("Siguiente Nodo Hijo: ", siguienteNodoHijo);
+
+    let primerElementoHijo = articulo1.firstElementChild;
+    console.log("Primer Elemento Hijo: ", primerElementoHijo);
+    let siguienteElementoHijo = primerElementoHijo.nextElementSibling;
+    console.log("Siguiente Elemento Hijo: ", siguienteElementoHijo);
+
+    let contendorPrincipal = siguienteElementoHijo.closest('.contenedor');
+    console.log("ContendorPrincipal: ", contendorPrincipal);
+</script>
+
+</body>
+</html>
