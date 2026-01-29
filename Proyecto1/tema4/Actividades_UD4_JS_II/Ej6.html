@@ -7,6 +7,28 @@
 <h1 id="titulo">Título original</h1>
 <button id="myButton">Clickeame</button>
 </body>
+<script>
+    const myButton = document.getElementById("myButton");
+    document.addEventListener("DOMContentLoaded", () => {
+        document.title = "DOM listo para JS";
+    })
+
+    myButton.addEventListener("click", () => {
+        alert("Botón clickedo");
+    })
+    function miManejador() {
+        console.log("Evento ejecutado");
+        alert("Todavía puedes verme.");
+    }
+
+    myButton.addEventListener('click', miManejador);
+    console.log("Listener añadido. Tienes 5 segundos para probarlo.");
+
+    setTimeout(() => {
+        myButton.removeEventListener('click', miManejador);
+        console.log("Listener eliminado. El botón ya no hará nada.");
+    }, 5000);
+</script>
 </html>
 
 

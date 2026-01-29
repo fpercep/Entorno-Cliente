@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 </head>
 <body>
+<button id="btn-crear">Crear Nueva Tarjeta</button>
 <div id="tarjetas">
   <div class="tarjeta"><button>Editar A</button></div>
   <div class="tarjeta"><button>Editar B</button></div>
@@ -11,9 +12,20 @@
 </body>
 <script>
     const tarjetas = document.getElementById("tarjetas");
+    const btn = document.getElementById("btn-crear");
 
     tarjetas.addEventListener('click', (event) => {
+        if(event.target.matches("button")) {
+            const tarjeta = event.target.closest(".tarjeta");
+            tarjeta.style.backgroundColor = "yellow";
+        }
+    })
 
+    btn.addEventListener("click", (event) => {
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("tarjeta");
+        tarjeta.innerHTML = "<button>Editar Nuevo</button>";
+        tarjetas.appendChild(tarjeta);
     })
 
 </script>
