@@ -11,7 +11,22 @@
 <ul id="info-dispositivo"></ul>
 
 <script>
-</script>
+    const lista = document.getElementById('info-dispositivo');
+     const informacion = {
+         "Ancho": screen.width,
+         "Alto": screen.height,
+         "Navegador": navigator.userAgent,
+         "Idioma": navigator.language,
+     }
 
+    for (const [clave, valor] of Object.entries(informacion)) {
+        let li = document.createElement("li");
+        li.textContent = clave + ": " + valor;
+        lista.appendChild(li);
+    }
+    if (screen.width < 200) {
+        console.log("Pantalla Pequeña !!!!!!");
+    }
+</script>
 </body>
 </html>

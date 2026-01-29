@@ -10,14 +10,35 @@
 <ul id="info-url"></ul>
 
 <script>
-    let url = window.location.href;
-    let protocolo = window.location.protocol;
-    let host = window.location.host;
-    let hostname = window.location.hostname;
-    let puerto = window.location.port;
-    let pathname = window.location.pathname;
-    let queryString = window.location.search;
-    let hash = window.location.hash;
+    const loc = window.location;
+
+    const parametros = {
+        "url": loc.hostname,
+        "protocolo": loc.protocol,
+        "host": loc.host,
+        "hostname": loc.hostname,
+        "puerto": loc.port,
+        "pathname": loc.pathname,
+        "queryString": loc.search || "Sin parametros",
+        "hash": loc.hash || "Sin hash",
+
+    }
+
+    const lista = document.getElementById('info-url');
+    for (const [clave, valor] of Object.entries(parametros)) {
+        let li = document.createElement("li");
+        li.textContent = clave +": "+ valor;
+        lista.appendChild(li);
+    }
+
+    if (loc.search !== "") {
+        alert("La URL contiene párametros");
+    }
+
+    if (loc.hash !== "") {
+        lista.style.backgroundColor = "red";
+    }
+
 </script>
 
 </body>

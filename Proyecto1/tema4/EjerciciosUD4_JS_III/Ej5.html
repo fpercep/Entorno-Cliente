@@ -13,7 +13,31 @@
 <button id="btnCambiar">Cambiar URL</button>
 
 <script>
-</script>
+    const btnAtras = document.getElementById('btnAtras');
+    const btnAdelante = document.getElementById('btnAdelante');
+    const btnCambiar = document.getElementById('btnCambiar');
 
+    tamanioHistorial()
+    btnAtras.addEventListener('click', () => {
+        history.back()
+        tamanioHistorial()
+    })
+
+    btnAdelante.addEventListener('click', () => {
+        history.forward()
+        tamanioHistorial()
+    })
+
+    btnCambiar.addEventListener('click', () => {
+        const state = { page_id: 1, user_id: 5 };
+        history.pushState(state, "", "url-cambiada.html")
+        alert("URL CAMBIADA !!!!!!")
+        tamanioHistorial()
+    })
+
+    function tamanioHistorial() {
+        console.log( history.length)
+    }
+</script>
 </body>
 </html>
