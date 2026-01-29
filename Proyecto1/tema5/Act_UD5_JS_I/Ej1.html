@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 1 - Panel de botones</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button { margin: 5px; padding: 10px 20px; }
+</style>
+</head>
+<body>
+<h2>Panel de botones</h2>
+<button id="btnClick">Click</button>
+<button id="btnDblClick">Doble Click</button>
+<script>
+    let btnClick = document.getElementById("btnClick");
+    let btnDblClick = document.getElementById("btnDblClick");
+    let botones = document.getElementsByTagName("button");
+    btnClick.addEventListener("click", () => {
+
+        for (const  boton of botones) {
+            boton.style.backgroundColor = "red";
+        }
+    })
+
+    btnDblClick.addEventListener("dblclick", () => {
+        for (const  boton of botones) {
+            boton.style.backgroundColor = "";
+        }
+    })
+</script>
+</body>
+</html>
