@@ -25,10 +25,10 @@
             console.log(`${event.target.id}: ${event.target.value}`);
         })
         input.addEventListener('focus', (event) => {
-            input.style.border = "solid 1px red";
+            event.target.style.border = "solid 1px red";
         })
         input.addEventListener('blur', (event) => {
-            input.style.border = "";
+            event.target.style.border = "";
         })
     }
 

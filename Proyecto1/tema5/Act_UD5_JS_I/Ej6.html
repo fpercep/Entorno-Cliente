@@ -15,6 +15,20 @@
   <button id="boton">Botón</button>
 </div>
 <script>
+    const contenedor = document.getElementById('contenedor');
+    const boton = document.getElementById('boton');
+
+    contenedor.addEventListener('click', (event) => {
+        console.log("Target:", event.target);
+        console.log("CurrentTarget:", event.currentTarget);
+    });
+
+    boton.addEventListener('click', (event) => {
+        console.log("Target:", event.target);
+        console.log("CurrentTarget:", event.currentTarget);
+
+        event.stopPropagation();
+    });
 </script>
 </body>
 </html>

@@ -10,9 +10,25 @@
 </head>
 <body>
 <h2>Carrusel de imágenes</h2>
-<div id="carrusel">Imagen 1</div>
+<div id="carrusel">img1.png</div>
 <button id="detener">Detener carrusel</button>
 <script>
+    const imagenes = ["img1.png", "img2.png", "img3.png"];
+    const divImagen = document.getElementById("carrusel");
+    const detener = document.getElementById("detener");
+    let contador = 0
+    let intervalo = setInterval(() => {
+        contador++;
+        if (contador >= imagenes.length) {
+            contador = 0;
+        }
+        divImagen.textContent = imagenes[contador];
+    }, 3000);
+
+    detener.addEventListener("click", (event) => {
+        clearInterval(intervalo);
+        console.log(event.type);
+    })
 </script>
 </body>
 </html>

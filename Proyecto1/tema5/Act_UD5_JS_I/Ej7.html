@@ -19,6 +19,40 @@
   <h3>Completadas</h3>
 </div>
 <script>
+    const contenedores = document.querySelectorAll('.contenedor');
+
+
+    const tareas = document.querySelectorAll('.tarea');
+
+    tareas.forEach(tarea => {
+        tarea.addEventListener('dragstart', (event) => {
+            console.log("Evento: dragstart");
+            event.dataTransfer.setData('text/plain', event.target.id);
+            event.target.style.color = 'red';
+        });
+
+        tarea.addEventListener('dragend', (event) => {
+            console.log("Evento: dragend");
+            event.target.style.color = 'black';
+        });
+    });
+
+    contenedores.forEach(contenedor => {
+        contenedor.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            console.log("dragover: " + contenedor.id);
+        });
+
+        contenedor.addEventListener('drop', (event) => {
+            event.preventDefault();
+            console.log("drop");
+
+            const idTarea = event.dataTransfer.getData('text/plain');
+            const tareaArrastrada = document.getElementById(idTarea);
+
+            contenedor.appendChild(tareaArrastrada);
+        });
+    })
 </script>
 </body>
 </html>
