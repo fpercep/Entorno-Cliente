@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<body>
+	<table id="tablaUsuarios">
+		<thead>
+			<tr><th>Nombre</th><th>Email</th><th>Acciones</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Ana</td>
+				<td>ana@email.com</td>
+				<td>
+					<button class="editar">Editar</button>
+					<button class="borrar">Borrar</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Carlos</td>
+				<td>carlos@email.com</td>
+				<td>
+					<button class="editar">Editar</button>
+					<button class="borrar">Borrar</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+<script>
+    let tBody = document.querySelector('tbody');
+    tBody.addEventListener('click', (event) => {
+        // event.target es el elemento exacto donde se da el clic, mintras currentTarget es el elemento del que esta vinculado al evento
+        let target = event.target;
+        let usuario  = target.closest('tr').firstElementChild.textContent;
+        if (target.classList.contains('editar')) {
+            console.log(`Se ha pulsado editar de ${usuario}`);
+        } else if (target.classList.contains('borrar')) {
+            console.log(`Se ha pulsado borrar de ${usuario}`);
+        }
+
+    })
+</script>
+</body>
+</html>

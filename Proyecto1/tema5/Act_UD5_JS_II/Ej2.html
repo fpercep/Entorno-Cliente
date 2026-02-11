@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+</head>
+<body>
+<div id="panel">
+		<div class="card">
+			<h3>Ventas</h3>
+			<button>Ver detalle</button>
+		</div>
+		<div class="card">
+			<h3>Clientes</h3>
+			<button>Ver detalle</button>
+		</div>
+</div>
+<script>
+    let cards = document.getElementsByClassName("card");
+    for (const card of cards) {
+        card.addEventListener("click", (event) => {
+            console.log(event.target.tagName);
+            console.log(event.currentTarget.className);
+            //Si usuaramos target para cambiar el estilo, se cambiaria el elemento exacto donde se hizo click
+            event.currentTarget.style.backgroundColor = "red";
+        })
+    }
+</script>
+</body>
+</html>

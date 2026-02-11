@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3</title>
+</head>
+<body>
+<nav id="menu">
+	<ul>
+		<li>Inicio</li>
+		<li>Servicios
+			<ul>
+				<li>Web</li>
+				<li>App</li>
+			</ul>
+		</li>
+		<li>Contacto</li>
+	</ul>
+</nav>
+<script>
+    let menu = document.getElementById("menu");
+    let lis = menu.getElementsByTagName("li");
+    menu.addEventListener('click', () => {
+        console.log("<nav>");
+    }, true);
+
+    for (let li of lis) {
+        li.addEventListener('click', () => {
+            console.log(li.innerText.split('\n')[0]);
+        });
+    }
+
+    // en <nav> -> Web -> Servicio
+    // Aunque el flujo normal de respuesta suele ser de abajo hacia arriba (burbujeo), el evento siempre hace un viaje de ida y vuelta (baja y luego sube)
+    // Al bajar se topa con la captura del nav y luego velve a su flujo normal ignorando los eventos ya activados.
+</script>
+</body>
+</html>
