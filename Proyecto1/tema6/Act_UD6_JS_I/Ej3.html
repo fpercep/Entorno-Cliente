@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Proyectos</title>
+</head>
+<body>
+<h2>Proyectos activos</h2>
+<ul id="listaProyectos"></ul>
+<script>
+    const fetchConRetardo = async (url, opciones = {}) => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        return fetch(url, opciones);
+    };
+    async function gestionarProyectos() {
+        try {
+            const response = await fetchConRetardo("http://localhost:3000/proyectos");
+            if (!response.ok) {throw new Error(response.statusText)}
+            const proyectos = await response.json();
+            const lista = document.getElementById("listaProyectos");
+            for (const proyecto of proyectos) {
+                let element = document.createElement("li");
+                element.textContent = `${proyecto.id} - ${proyecto.nombre}`;
+                lista.append(element);
+            }
+        }catch(err) {
+            console.log(err)
+        }
+    }
+    gestionarProyectos()
+</script>
+</body>
+</html>

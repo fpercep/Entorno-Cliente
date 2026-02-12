@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Empleados</title>
+</head>
+<body>
+<h2>Listado de empleados</h2>
+<ul id="listaEmpleados"></ul>
+<script>
+    const URL = "http://localhost:3000/empleados";
+
+    const fetchConRetardo = async (url, opciones = {}) => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        return fetch(url, opciones);
+    };
+
+    console.log("Iniciando petición al servidor...");
+
+    fetchConRetardo(URL)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`Error HTTP: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(data => {
+            const lista = document.getElementById("listaEmpleados");
+            lista.textContent = "";
+
+            data.forEach(empleado => {
+                const li = document.createElement("li");
+                li.textContent = `ID: ${empleado.id} | ${empleado.nombre} | ${empleado.puesto} | ${empleado.departamento} | ${empleado.salario}€`;
+                lista.appendChild(li);
+            });
+
+            console.log("Datos cargados desde API simulada");
+        })
+        .catch(error => {
+            console.error("Error de conexión:", error);
+        });
+</script>
+</body>
+</html>

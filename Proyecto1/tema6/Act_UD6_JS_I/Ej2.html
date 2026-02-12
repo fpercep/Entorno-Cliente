@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nueva incidencia</title>
+</head>
+<body>
+<h2>Registrar incidencia</h2>
+<form id="formIncidencia">
+        <label for="titulo">Título de la incidencia:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        <label for="descripcion">Descripción detallada:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        <label for="prioridad">Nivel de Prioridad:</label>
+        <select id="prioridad" name="prioridad">
+            <option value="alta">Alta</option>
+            <option value="media" selected>Media</option>
+            <option value="baja">Baja</option>
+        </select>
+    <button type="submit">Crear incidencia</button>
+</form>
+
+<script>
+    let formulario = document.getElementById('formIncidencia');
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let titulo = document.getElementById('titulo').value;
+        let descripcion = document.getElementById('descripcion').value;
+        let prioridad = document.getElementById('prioridad').value;
+
+        const URL = "http://localhost:3000/incidencias";
+
+        const fetchConRetardo = async (url, opciones = {}) => {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            return fetch(url, opciones);
+        };
+
+        const nuevaIndicencia = {
+            titulo: titulo,
+            descripcion: descripcion,
+            prioridad: prioridad,
+            fecha: new Date().toLocaleDateString()
+        }
+
+        fetchConRetardo(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(nuevaIndicencia),
+        })
+        .then(res => {
+            if (!res.ok) throw new Error("Fallo en la petición");
+            return res.json();
+        })
+        .then(data => {
+            console.log("Incidencia creada:",data);
+        })
+        .catch(err => {console.log(err)})
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{
+  "empleados": [
+    {
+      "id": 1,
+      "nombre": "Ana García",
+      "puesto": "Desarrolladora Senior",
+      "departamento": "IT",
+      "salario": 45000
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos López",
+      "puesto": "Analista de Datos",
+      "departamento": "Marketing",
+      "salario": 38000
+    },
+    {
+      "id": 3,
+      "nombre": "Elena Martínez",
+      "puesto": "Gerente de Proyectos",
+      "departamento": "Gestión",
+      "salario": 52000
+    },
+    {
+      "id": 4,
+      "nombre": "Javier Ruiz",
+      "puesto": "Diseñador UX/UI",
+      "departamento": "Diseño",
+      "salario": 32000
+    },
+    {
+      "id": 5,
+      "nombre": "Laura Sánchez",
+      "puesto": "Recursos Humanos",
+      "departamento": "RRHH",
+      "salario": 30000
+    }
+  ],
+  "incidencias": [],
+  "proyectos": [
+    {
+      "id": 1,
+      "nombre": "Intranet corporativa",
+      "cliente": "Grupo Alborán",
+      "estado": "En desarrollo",
+      "fechaInicio": "2025-01-15",
+      "fechaFin": "2025-06-30",
+      "responsable": "Laura Sánchez"
+    },
+    {
+      "id": 2,
+      "nombre": "Tienda online",
+      "cliente": "TechMarket",
+      "estado": "Activo",
+      "fechaInicio": "2024-11-01",
+      "fechaFin": "2025-04-15",
+      "responsable": "Carlos Ruiz"
+    },
+    {
+      "id": 3,
+      "nombre": "App de reservas",
+      "cliente": "Hotel Costa Sur",
+      "estado": "En mantenimiento",
+      "fechaInicio": "2024-05-10",
+      "fechaFin": "2024-12-20",
+      "responsable": "Marta López"
+    }
+  ]
+}
