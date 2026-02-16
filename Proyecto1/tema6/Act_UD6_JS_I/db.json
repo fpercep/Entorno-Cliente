@@ -65,5 +65,19 @@
       "fechaFin": "2024-12-20",
       "responsable": "Marta López"
     }
+  ],
+  "clientes": [
+    {
+      "id": "b03d",
+      "nombre": "1234",
+      "email": "1245",
+      "empresa": "1244"
+    },
+    {
+      "id": "c71e",
+      "nombre": "1234",
+      "email": "Usuario",
+      "empresa": "1244"
+    }
   ]
 }

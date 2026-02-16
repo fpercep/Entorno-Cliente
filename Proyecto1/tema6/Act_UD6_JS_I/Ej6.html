@@ -10,6 +10,28 @@
 <input type="email" id="email" placeholder="Email"><br><br>
 <button id="btnCrear">Crear cliente y proyecto</button>
 <p id="resultado"></p>
-<script src="scriptEj6.js"></script>
+<script src="">
+    const fetchConRetardo = async (url, opciones = {}) => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        return fetch(url, opciones);
+    };
+
+    async function crearUsuario(cliente) {
+        const response = await fetchConRetardo("http://localhost:3000/clientes", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cliente)
+        });
+        if (!response.ok) {throw new Error(response.statusText)};
+        let datos = await response.json();
+        await crearProyecto(datos)
+    }
+
+    async function crearProyecto(datos) {
+
+    }
+</script>
 </body>
 </html>
