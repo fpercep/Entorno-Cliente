@@ -10,9 +10,20 @@
 		<input type="email" name="email" placeholder="Email">
 		<input type="password" name="password" placeholder="Contraseña">
 	</form>
-<script>
-    let form = form.getElementsByTagName("registro");
+    <script>
+        let registro = document.getElementById("registro");
 
-</script>
+        registro.addEventListener('input', (event) => {
+            let field = event.target;
+            let name = field.name;
+
+            // Validamos según el atributo name detectado por event.target
+            if (name === "nombre") {
+                field.style.outline = field.value.length < 3 ? "2px solid red" : "";
+            } else if (name === "password") {
+                field.style.outline = field.value.length < 6 ? "2px solid red" : "";
+            }
+        });
+    </script>
 </body>
 </html>

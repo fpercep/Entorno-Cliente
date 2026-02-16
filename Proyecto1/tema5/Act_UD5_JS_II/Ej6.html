@@ -8,6 +8,19 @@
 	<div class="card">
 		<a href="https://example.com">Ir al informe</a>
 	</div>
-<script></script>
+    <script>
+        let card = document.querySelector('.card');
+        let link = document.querySelector('a');
+
+        card.addEventListener('click', () => {
+            console.log("Card pulsada");
+        });
+
+        link.addEventListener('click', (event) => {
+            // stopPropagation evita que el evento "suba" hacia la card, resolviendo el problema de ejecuciones dobles
+            event.stopPropagation();
+            console.log("Enlace pulsado");
+        });
+    </script>
 </body>
 </html>
