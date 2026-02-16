@@ -13,6 +13,26 @@
 		</li>
 	</ul>
 	<button id="nueva">Nueva tarea</button>
-<script></script>
+    <script>
+        let lista = document.getElementById("tareas");
+        let btnNueva = document.getElementById("nueva");
+
+        lista.addEventListener('click', (event) => {
+            let target = event.target;
+            // event.currentTarget es siempre el <ul>, lo que permite que el listener no se pierda al crear elementos nuevos
+            if (target.classList.contains('ok')) {
+                target.parentElement.style.textDecoration = "line-through";
+                target.parentElement.style.color = "gray";
+            } else if (target.classList.contains('delete')) {
+                target.parentElement.remove();
+            }
+        });
+
+        btnNueva.addEventListener('click', () => {
+            let li = document.createElement('li');
+            li.innerHTML = '<span>Nueva tarea dinámica</span> <button class="ok">✔</button> <button class="delete">✖</button>';
+            lista.appendChild(li);
+        });
+    </script>
 </body>
 </html>

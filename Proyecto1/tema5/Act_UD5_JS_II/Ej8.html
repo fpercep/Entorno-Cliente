@@ -13,6 +13,17 @@
 		<button>Acción 2</button>
 	</div>
 </section>
-<script></script>
+<script>
+    let app = document.getElementById("app");
+
+    // El tercer parámetro true activa la fase de captura
+    app.addEventListener('click', (event) => {
+        console.log("Target:", event.target);
+        console.log("CurrentTarget:", event.currentTarget);
+        console.log("Fase:", event.eventPhase);
+        // Útil en entornos reales para auditorías de seguridad o analíticas antes de que otros scripts detengan el evento.
+        // Si fuera burbujeo, veríamos el log después de que los elementos hijos procesen sus propios clics.
+    }, true);
+</script>
 </body>
 </html>

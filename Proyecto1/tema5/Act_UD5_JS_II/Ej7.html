@@ -15,6 +15,20 @@
     <button>Cerrar</button>
   </div>
 </div>
-<script></script>
+<script>
+    let contenedor = document.getElementById("notificaciones");
+
+    contenedor.addEventListener('click', (event) => {
+        let target = event.target;
+        // closest busca el ancestro más cercano que cumpla el selector, identificando la notificación padre
+        let card = target.closest('.notificacion');
+
+        if (target.tagName === 'BUTTON') {
+            card.remove();
+        } else if (card) {
+            console.log(card.querySelector('p').textContent);
+        }
+    });
+</script>
 </body>
 </html>
