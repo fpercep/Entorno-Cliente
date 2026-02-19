@@ -10,7 +10,21 @@
 <input type="email" id="email" placeholder="Email"><br><br>
 <button id="btnCrear">Crear cliente y proyecto</button>
 <p id="resultado"></p>
-<script src="">
+<script>
+
+    document.getElementById("btnCrear").addEventListener('click', function(){
+        let nombre = document.getElementById("nombre").value;
+        let email = document.getElementById("email").value;
+
+        let cliente = {
+            nombre: nombre,
+            email: email,
+        }
+
+        crearUsuario(cliente);
+    })
+
+
     const fetchConRetardo = async (url, opciones = {}) => {
         await new Promise(resolve => setTimeout(resolve, 2000));
         return fetch(url, opciones);
@@ -26,11 +40,22 @@
         });
         if (!response.ok) {throw new Error(response.statusText)};
         let datos = await response.json();
-        await crearProyecto(datos)
+        await crearProyectoInicial(datos.nombre, datos.id)
+        return datos;
     }
 
-    async function crearProyecto(datos) {
+    async function crearProyectoInicial(nombre, clienteId) {
+        const nuevoProyecto = {nombre: nombre, clienteId: clienteId};
 
+        const response = await fetchConRetardo("http://localhost:3000/proyectos", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(nuevoProyecto)
+        })
+        if (!response.ok) {throw new Error(response.statusText)};
+        return response.json();
     }
 </script>
 </body>

@@ -1,0 +1,34 @@
+{
+  "alumnos": [
+    {
+      "id": "1",
+      "nombre": "Ana",
+      "email": "ana@email.com",
+      "curso": "2º DAW"
+    },
+    {
+      "id": "2",
+      "nombre": "Luis",
+      "email": "luis@email.com",
+      "curso": "2º DAW"
+    },
+    {
+      "id": "eadc",
+      "nombre": "prueba",
+      "email": "pueba@prueba.prueba",
+      "curso": "prueba"
+    },
+    {
+      "id": "5246",
+      "nombre": "123",
+      "email": "123@124.124",
+      "curso": "123"
+    },
+    {
+      "id": "f08c",
+      "nombre": "a",
+      "email": "a@a.a",
+      "curso": "a"
+    }
+  ]
+}

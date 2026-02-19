@@ -1,6 +1,21 @@
 {
-"clientes": [
-{ "id": 1, "nombre": "Empresa Sol", "email": "contacto@empresasol.es" }
-],
-"proyectos": []
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "Empresa Sol",
+      "email": "contacto@empresasol.es"
+    },
+    {
+      "id": "98dd",
+      "nombre": "prueba",
+      "email": "pueba@prueba.prueba"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": "43c3",
+      "nombre": "prueba",
+      "clienteId": "98dd"
+    }
+  ]
 }
