@@ -1,18 +1,6 @@
 {
   "alumnos": [
     {
-      "id": "1",
-      "nombre": "Ana",
-      "email": "ana@email.com",
-      "curso": "2º DAW"
-    },
-    {
-      "id": "2",
-      "nombre": "Luis",
-      "email": "luis@email.com",
-      "curso": "2º DAW"
-    },
-    {
       "id": "eadc",
       "nombre": "prueba",
       "email": "pueba@prueba.prueba",
@@ -25,10 +13,10 @@
       "curso": "123"
     },
     {
-      "id": "f08c",
-      "nombre": "a",
-      "email": "a@a.a",
-      "curso": "a"
+      "nombre": "Ana Edit",
+      "email": "ana@email.com",
+      "curso": "2º DAW",
+      "id": "3d40"
     }
   ]
 }

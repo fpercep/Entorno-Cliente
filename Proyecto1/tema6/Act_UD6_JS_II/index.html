@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Gestión de Alumnos</title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -13,12 +13,13 @@
 <hr>
 
 <section>
-    <h2>Añadir Nuevo Alumno</h2>
+    <h2 id="titulo-alumno">Añadir Nuevo Alumno</h2>
     <form id="formulario-alumno">
         <input type="text" id="nombre" placeholder="Nombre" required>
         <input type="email" id="email" placeholder="Email" required>
         <input type="text" id="curso" placeholder="Curso" required>
         <button type="submit" id="btn-guardar">Guardar Alumno</button>
+        <button type="button" onclick="limpiarFormulario()">Cancelar</button>
     </form>
 </section>
 
