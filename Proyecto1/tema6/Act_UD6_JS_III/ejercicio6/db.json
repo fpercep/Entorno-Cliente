@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    { "id": 1, "nombre": "Ana" },
+    { "id": 2, "nombre": "Luis" }
+  ],
+  "tareas": [
+    { "id": 1, "userId": 1, "titulo": "Aprender Axios", "completada": false },
+    { "id": 2, "userId": 1, "titulo": "Estudiar DWEC", "completada": true },
+    { "id": 3, "userId": 2, "titulo": "Práctica JSON Server", "completada": false }
+  ]
+}
