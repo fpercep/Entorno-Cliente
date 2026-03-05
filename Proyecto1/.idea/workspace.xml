@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4260e4c7-07b5-4e1e-8e00-b8c30fd8b6b5" name="Changes" comment="Actividad 6 parte 3, empezada" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fpercep&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:fpercep/Entorno-Cliente.git&quot;,
+    &quot;accountId&quot;: &quot;32d95c80-b65d-49a5-b427-ce6ec7a764e6&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="33WEqZrd7IGtOrYRUKPFKTYX6pr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.Proyecto1.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.eje.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.prueba.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.tarea2_Practica3.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.tema2_ejer1_act1.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/repo/Entorno-Cliente/Proyecto1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;JavaScript.Libraries&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1\tema6" />
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1" />
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1\tema4\ActividadesUD4_R1" />
+      <recent name="C:\Entorno-Cliente\Proyecto1\tema3\tema3_arrays_sets_map" />
+      <recent name="C:\Entorno-Cliente\Proyecto1\tema3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1\tema6" />
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1\tema5" />
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1\tema5\Act_UD5_JS_I" />
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1\tema5\Act_UD5_JS_I\ej5" />
+      <recent name="C:\repo\Entorno-Cliente\Proyecto1\tema4\Actividades_UD4_JS_II" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.eje.js">
+    <configuration name="Proyecto1" type="NodeJSConfigurationType" path-to-node="$APPLICATION_CONFIG_DIR$/node/versions/22.21.0/node" path-to-js-file="$PROJECT_DIR$/tema2/prueba.js" working-dir="$PROJECT_DIR$/tema2">
+      <method v="2" />
+    </configuration>
+    <configuration name="eje.js" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="eje.js" working-dir="$PROJECT_DIR$/tema2">
+      <method v="2" />
+    </configuration>
+    <configuration name="prueba.js" type="NodeJSConfigurationType" path-to-node="$APPLICATION_CONFIG_DIR$/node/versions/22.21.0/node" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tema2/prueba.js" working-dir="$PROJECT_DIR$/tema2">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-WS-252.26199.162" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4260e4c7-07b5-4e1e-8e00-b8c30fd8b6b5" name="Changes" comment="" />
+      <created>1759424619344</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759424619344</updated>
+      <workItem from="1759424620342" duration="98000" />
+      <workItem from="1759517158510" duration="1492000" />
+      <workItem from="1759776136604" duration="809000" />
+      <workItem from="1760021766825" duration="113000" />
+      <workItem from="1760630100311" duration="1374000" />
+      <workItem from="1761230510206" duration="4978000" />
+      <workItem from="1761235736331" duration="1495000" />
+      <workItem from="1761593937228" duration="3011000" />
+      <workItem from="1761765168849" duration="5082000" />
+      <workItem from="1762180676599" duration="9000" />
+      <workItem from="1763048432108" duration="690000" />
+      <workItem from="1763050225543" duration="2182000" />
+      <workItem from="1763397500513" duration="46000" />
+      <workItem from="1763398935355" duration="362000" />
+      <workItem from="1763402389151" duration="3939000" />
+      <workItem from="1763569352281" duration="1066000" />
+      <workItem from="1763654619216" duration="15055000" />
+      <workItem from="1764009964941" duration="2743000" />
+      <workItem from="1764086885423" duration="596000" />
+      <workItem from="1764257817360" duration="8567000" />
+      <workItem from="1764347129723" duration="101000" />
+      <workItem from="1764348656662" duration="416000" />
+      <workItem from="1764362220647" duration="275000" />
+      <workItem from="1764790072735" duration="653000" />
+      <workItem from="1765393857869" duration="3957000" />
+      <workItem from="1765476242766" duration="5689000" />
+      <workItem from="1765550429979" duration="11376000" />
+      <workItem from="1765565247310" duration="951000" />
+      <workItem from="1765818642323" duration="3869000" />
+      <workItem from="1768401900108" duration="155000" />
+      <workItem from="1768491937333" duration="12364000" />
+      <workItem from="1768591323041" duration="3069000" />
+      <workItem from="1768849552190" duration="3461000" />
+      <workItem from="1769095929338" duration="750000" />
+      <workItem from="1769701929570" duration="8514000" />
+      <workItem from="1769793597306" duration="23000" />
+      <workItem from="1770059957875" duration="4710000" />
+      <workItem from="1770389910646" duration="147000" />
+      <workItem from="1770836120427" duration="5731000" />
+      <workItem from="1770910540957" duration="11416000" />
+      <workItem from="1771268036337" duration="6106000" />
+      <workItem from="1771338978900" duration="9000" />
+      <workItem from="1771516725309" duration="10284000" />
+      <workItem from="1771616510290" duration="113000" />
+      <workItem from="1771616669902" duration="67000" />
+      <workItem from="1771616738889" duration="22000" />
+      <workItem from="1772045551618" duration="5265000" />
+      <workItem from="1772122557293" duration="9407000" />
+      <workItem from="1772133100529" duration="38000" />
+      <workItem from="1772636903636" duration="2300000" />
+      <workItem from="1772651156358" duration="20000" />
+      <workItem from="1772725824893" duration="860000" />
+    </task>
+    <task id="LOCAL-00001" summary="Primer Push">
+      <option name="closed" value="true" />
+      <created>1759424708222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759424708222</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Push">
+      <option name="closed" value="true" />
+      <created>1761238569459</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761238569459</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Arreglar commit casa">
+      <option name="closed" value="true" />
+      <created>1761765839071</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761765839071</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Arreglar commit casa">
+      <option name="closed" value="true" />
+      <created>1761770647594</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761770647594</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chuletas.html">
+      <option name="closed" value="true" />
+      <created>1763569367173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763569367173</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Tarea tema 3 1-7">
+      <option name="closed" value="true" />
+      <created>1763670829973</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763670829973</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Tarea tema 3 empezar 11">
+      <option name="closed" value="true" />
+      <created>1764362493377</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764362493377</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Empezar tema 3 vol 3">
+      <option name="closed" value="true" />
+      <created>1765399477879</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765399477879</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Empezar tema 3 vol 3">
+      <option name="closed" value="true" />
+      <created>1765482127867</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765482127867</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Tema 3">
+      <option name="closed" value="true" />
+      <created>1765818713070</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1765818713070</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Tema 4 Boletin JS">
+      <option name="closed" value="true" />
+      <created>1768497806075</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768497806075</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Tema 4 Boletin JS 2">
+      <option name="closed" value="true" />
+      <created>1768506040084</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1768506040084</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tema 4 Boletin JS 2, terminar primera parte">
+      <option name="closed" value="true" />
+      <created>1768595909438</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768595909438</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Tema 4 Boletin JS 2, terminar">
+      <option name="closed" value="true" />
+      <created>1768854561266</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768854561266</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Tema 5, actividades 1-4">
+      <option name="closed" value="true" />
+      <created>1769715916729</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1769715916729</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Tema 5, terminar actividades">
+      <option name="closed" value="true" />
+      <created>1770064871254</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1770064871254</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Tema 5 ultimo boletin">
+      <option name="closed" value="true" />
+      <created>1770842350852</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1770842350852</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Tema 5 ultimo boletin a medias y actividad 6 a medias">
+      <option name="closed" value="true" />
+      <created>1770925230786</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1770925230786</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Actividad 6 casi completo, falta actividad 6 por terminar">
+      <option name="closed" value="true" />
+      <created>1771274338911</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1771274338911</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Actividad 6 parte 2, a casi terminar">
+      <option name="closed" value="true" />
+      <created>1771530271765</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1771530271765</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Actividad 6 parte 2, terminada">
+      <option name="closed" value="true" />
+      <created>1772052087831</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1772052087831</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Actividad 6 parte 3, empezada">
+      <option name="closed" value="true" />
+      <created>1772133124961</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1772133124961</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primer Push" />
+    <MESSAGE value="Push" />
+    <MESSAGE value="Arreglar commit casa" />
+    <MESSAGE value="chuletas.html" />
+    <MESSAGE value="Tarea tema 3 1-7" />
+    <MESSAGE value="Tarea tema 3 empezar 11" />
+    <MESSAGE value="Empezar tema 3 vol 3" />
+    <MESSAGE value="Tema 3" />
+    <MESSAGE value="Tema 4 voletin JS" />
+    <MESSAGE value="Tema 4 Boletin JS" />
+    <MESSAGE value="Tema 4 Boletin JS 2" />
+    <MESSAGE value="Tema 4 Boletin JS 2, terminar primera parte" />
+    <MESSAGE value="Tema 4 Boletin JS 2, terminar" />
+    <MESSAGE value="Tema 5, actividades 1-4" />
+    <MESSAGE value="Tema 5, terminar actividades" />
+    <MESSAGE value="Tema 5 ultimo boletin" />
+    <MESSAGE value="Tema 5 ultimo boletin a medias y actividad 6 a medias" />
+    <MESSAGE value="Actividad 6 casi completo, falta actividad 6 por terminar" />
+    <MESSAGE value="Actividad 6 parte 2, a casi terminar" />
+    <MESSAGE value="Actividad 6 parte 2, terminada" />
+    <MESSAGE value="Actividad 6 parte 3, empezada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actividad 6 parte 3, empezada" />
+  </component>
+</project>

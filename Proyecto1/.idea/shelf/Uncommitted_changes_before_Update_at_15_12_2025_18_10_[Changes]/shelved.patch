@@ -1,0 +1,341 @@
+Index: ../examenTema3/gestorEventos.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../examenTema3/gestorEventos.html b/../examenTema3/gestorEventos.html
+new file mode 100644
+--- /dev/null	(date 1765570658284)
++++ b/../examenTema3/gestorEventos.html	(date 1765570658284)
+@@ -0,0 +1,74 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++</head>
++<body>
++    <script>
++        function establecerCookie(nombre, valor, dias){
++            let valorEncriptado = encodeURIComponent(valor.toUpperCase());
++            document.cookie = normalizarTexto(nombre) + "=" + valorEncriptado + ";expired=" + calcularDias(dias);
++        }
++        function calcularDias(dias){
++            dias = Number(dias);
++            let fecha = new Date();
++            fecha.setDate(fecha.getDate() + dias);
++            return fecha.toUTCString();
++        }
++        function obtenerCookie(nombre){
++            let cookies = document.cookie.split(';');
++            console.log(cookies);
++            cookies.find(cookie => cookie.startsWith(nombre));
++            return  cookies.find(cookie => cookie.startsWith(normalizarTexto(nombre)+"="));
++        }
++        function comprobarCookie(valor){
++            let cookie = obtenerCookie("usuario");
++            if (cookie.split('=')[1]===valor.toUpperCase()) {
++                alert("Bienvenido de nuevo " + valor);
++            }else {
++                let nombre = prompt("Introduzaca un nombre:").toUpperCase();
++                establecerCookie("usuario",nombre,30);
++            }
++        }
++
++        comprobarCookie("usuarioGamer")
++
++        let eventosGamer = [
++            {nombre:"Gamer1", tipo: "Anime" , fecha: "2005-12-01"},
++            {nombre:"Gamer2", tipo: "Juegos" , fecha: "2005-12-03"},
++            {nombre:"Gamer3", tipo: "RPG" , fecha: "2005-12-04"},
++            {nombre:"Gamer4", tipo: "Rol" , fecha: "2005-12-05"},
++        ]
++
++        function normalizarTexto(texto){
++            return texto.toLowerCase().trim();
++        }
++
++        function filtrarPorTipo(tipo){
++            let output = []
++            for (const evento of eventosGamer) {
++                if (normalizarTexto(evento.tipo) === normalizarTexto(tipo)){
++                    output.push(evento);
++                }
++            }
++            return output;
++        }
++
++        function buscarEvento(palabra){
++            return eventosGamer.filter(evento => normalizarTexto(evento.nombre).includes(normalizarTexto(palabra)));
++        }
++
++        let participantes = new Map();
++        eventosGamer.forEach(evento => participantes.set(evento.nombre, 0));
++        localStorage.setItem("eventosGamer",JSON.stringify(eventosGamer));
++
++        function apuntarParticipantes(nombreEvento, cantidad) {
++        }
++
++        console.log( buscarEvento("Gamer"));
++        apuntarParticipantes("Gamer2");
++        console.log(filtrarPorTipo("Rpg"))
++    </script>
++</body>
++</html>
+\ No newline at end of file
+Index: ../examenTema3/gestorPersonajes.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../examenTema3/gestorPersonajes.html b/../examenTema3/gestorPersonajes.html
+new file mode 100644
+--- /dev/null	(date 1765571989935)
++++ b/../examenTema3/gestorPersonajes.html	(date 1765571989935)
+@@ -0,0 +1,53 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++</head>
++<body>
++<script>
++    let personajes = [
++        {nombre: "John", Anime: "Juan Ataca", Poder: "Juanear", Rol: "Heroe", descripcion: ""},
++        {nombre: "Juan", Anime: "Juan Ataca", Poder: "Juanear", Rol: "Heroe", descripcion: ""},
++        {nombre: "Pepe", Anime: "Juan Ataca", Poder: "Juanear", Rol: "Villano", descripcion: ""},
++    ]
++
++    function registrarPersonaje() {
++        let n = prompt("Introduce el Nombre del personaje:");
++        let a = prompt("Introduce el Anime del personaje:");
++        let p = prompt("Introduce el Poder del personaje:");
++        let r = prompt("Introduce el Rol del personaje:");
++        let d = prompt("Introduce la Descripcion del personaje:");
++
++        personajes.push({nombre: n, Anime: a, Poder: p, Rol: r, descripcion: d},
++        )
++    }
++
++    function guardarPersonajes() {
++        // El enunciado pide local Storage, no web Storage
++        localStorage.setItem("personajes", JSON.stringify(personajes));
++    }
++
++    function cargarPersonajes() {
++         return JSON.parse(localStorage.getItem("personajes"));
++    }
++
++    function filtrarPorRol(rol){
++        return personajes.filter(personaje => personaje.Rol === rol)
++    }
++
++    function mostarRanking(){
++        return personajes.toSorted((a, b) => a.nombre - b.nombre);
++    }
++    function mostarDescripcion(){
++        return personajes.map(personaje => personaje.descripcion);
++    }
++
++    guardarPersonajes()
++    cargarPersonajes()
++    console.log(filtrarPorRol("Heroe"));
++    console.log(mostarRanking());
++    console.log(mostarDescripcion());
++</script>
++</body>
++</html>
+\ No newline at end of file
+Index: tema3/tema3_cookies_localStorage/gestor.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tema3/tema3_cookies_localStorage/gestor.html b/tema3/tema3_cookies_localStorage/gestor.html
+new file mode 100644
+--- /dev/null	(date 1765556186930)
++++ b/tema3/tema3_cookies_localStorage/gestor.html	(date 1765556186930)
+@@ -0,0 +1,41 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++</head>
++<body>
++    <script>
++        let productos = [
++            {nombre: "teclado", precio: 20, categoria:"perifericos"},
++            {nombre: "Monitor", precio: 1500, categoria:"pantallas"},
++        ];
++
++        let nombres = productos.map(pro => pro.nombre);
++        let menor50 = productos.filter(pro => pro.precio > 50);
++        let buscarNombre = productos.find(pro => pro.nombre === nombre);
++        let buscarNombreIndex = productos.findIndex(pro => pro.nombre === nombre);
++        let someTeclado = productos.some(pro => pro.nombre === nombre);
++        let everyTeclado = productos.every(pro => pro.nombre === nombre);
++        productos.sort((a, b) => a.precio - b.precio);
++        let productoOrdenados = productos.toSorted((a, b) => a.precio - b.precio);
++        productos.reverse();
++
++        let mapaClaveValor = new Map;
++        productos.forEach(producto => {
++            mapaClaveValor.set(producto.nombre, producto.precio)
++        })
++
++        function mostrar(){
++            let categorias = new Set(productos.map(pro => pro.categoria));
++            console.log("Categorias");
++            categorias.forEach(categoria => console.log(categoria));
++            console.log("---------");
++            console.log("Precios")
++            mapaClaveValor.forEach( (clave, valor) => console.log(valor));
++            console.log("---------");
++            console.log("Numero Categorias" + categorias.length);
++        }
++    </script>
++</body>
++</html>
+\ No newline at end of file
+Index: tema3/tema3_cookies_localStorage/tema3_gestorInventarioRPG.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tema3/tema3_cookies_localStorage/tema3_gestorInventarioRPG.html b/tema3/tema3_cookies_localStorage/tema3_gestorInventarioRPG.html
+new file mode 100644
+--- /dev/null	(date 1765562986019)
++++ b/tema3/tema3_cookies_localStorage/tema3_gestorInventarioRPG.html	(date 1765562986019)
+@@ -0,0 +1,87 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Gestor Inventario RPG</title>
++</head>
++<body>
++    <script>
++        let inventario = [
++            {
++                nombre: "Excalibur",
++                tipo: "Arma",
++                rareza: "Legendaria",
++                fechaObtencion: new Date("2025-12-02")
++            },
++            {
++                nombre: "Poción de Vida",
++                tipo: "Consumible",
++                rareza: "Común",
++                fechaObtencion: new Date("2025-11-20")
++            },
++            {
++                nombre: "Escudo de Dragón",
++                tipo: "Armadura",
++                rareza: "Épica",
++                fechaObtencion: new Date("2025-10-15")
++            },
++            {
++                nombre: "Juan",
++                tipo: "Acompañante",
++                rareza: "Rara",
++                fechaObtencion: new Date("2025-12-02")
++            }
++        ];
++
++        localStorage.setItem("inventario", JSON.stringify(inventario));
++
++        function crearObjeto(nombre, tipo, rareza){
++            let patron = /^[a-zA-ZÁ-ÿ\s]+$/;
++            if (!patron.test(nombre)) {
++                console.log(`Error: El nombre "${nombre}" contiene caracteres no válido`);
++            } else {
++                let tipoFormateado = tipo.toLowerCase();
++                let rarezaFormateada = rareza.toLowerCase();
++
++                let nuevoItem = {
++                    nombre: nombre,
++                    tipo: tipoFormateado,
++                    rareza: rarezaFormateada,
++                    fechaObtencion: new Date()
++                };
++
++                inventario.push(nuevoItem);
++                console.log(`Ítem "${nombre}" añadido correctamente.`);
++            }
++            localStorage.setItem("inventario", JSON.stringify(inventario));
++        }
++
++        function objetosXTipo(){
++            let conteoXtipo = new Map;
++            for (const objeto of inventario) {
++                if (conteoXtipo.has(objeto.tipo)) {
++                    let cantidadActual = conteoXtipo.get(objeto.tipo);
++                    conteoXtipo.set(objeto.tipo, cantidadActual + 1);
++                } else {
++                    conteoXtipo.set(objeto.tipo, 1)
++                }
++            }
++            return conteoXtipo;
++        }
++
++        function diasEnInventario(fecha){
++            let hoy = new Date();
++            return  hoy.getDate() - fecha.getDate();
++        }
++
++        function crearCookie(nombre){
++            let nombreEncrip = encodeURIComponent(nombre.toUpperCase());
++            let fecha = new Date();
++            fecha.setDate(fecha.getDate() + 2);
++            document.cookie = "actividadFavorita=" + nombreEncrip +";expires=" + fecha.toUTCString();
++        }
++
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+Index: ../examenTema3/streamers.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../examenTema3/streamers.html b/../examenTema3/streamers.html
+new file mode 100644
+--- /dev/null	(date 1765572081739)
++++ b/../examenTema3/streamers.html	(date 1765572081739)
+@@ -0,0 +1,31 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++</head>
++<body>
++    <script>
++        const streamers = [
++            { nombre: "Alex", juegos: ["Valorant", "Minecraft"] },
++            { nombre: "Marta", juegos: ["LoL", "Minecraft"] },
++            { nombre: "Luis", juegos: ["CS:GO"] },
++            { nombre: "Ana", juegos: ["Valorant", "LoL"] }
++        ];
++
++        function buscarStreamer(nombre){
++            return streamers.find(persona => persona.nombre === nombre);
++        }
++
++        function ordenarXNombre(){
++            let streamersOrdenados =  streamers.toSorted((a, b) => a.nombre.localeCompare(b.nombre));
++            console.log(streamersOrdenados);
++        }
++        let juegosXPersona = new Map();
++
++        streamers.forEach(jugador => juegosXPersona.set(jugador.nombre, jugador.juegos.length));
++        ordenarXNombre();
++        console.log(buscarStreamer("Marta"));
++    </script>
++</body>
++</html>
+\ No newline at end of file
